@@ -1,0 +1,43 @@
+\usepackage{amsmath,amssymb,stmaryrd,tikz}
+
+\newtheorem{prop}{Proposition}
+
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Ob}{\operatorname{Ob}}
+\newcommand{\Arr}{\operatorname{Arr}}
+\newcommand{\transformto}{\to}
+\newcommand{\base}{\mathrm{base}}
+\newcommand{\sub}{\mathrel{\triangleleft}}
+\newcommand{\subd}{\mathrel{\!\vcenter{\hbox{\larger[-12]$\blacktriangleleft$}}\!}}
+\newcommand{\idsub}{\id_{\sub}}
+\newcommand{\idsubd}{\id_{\subd}}
+\newcommand{\direct}[1]{\overset{#1}{\to}}
+\newcommand{\posof}{\in}
+\newcommand{\canoniso}{=}
+
+\newcommand{\bundle}[1]{\overset{#1}{\to}}
+\newcommand{\pos}[1]{#1(1)}
+\newcommand{\posmap}[1]{#1_1}
+\newcommand{\shrink}[2][.5]{\scalebox{#1}{$#2$}}
+
+
+\definecolor{rcol}{RGB}{255,0,0}
+\definecolor{gcol}{RGB}{0,150,0}
+\definecolor{pcol}{RGB}{170,0,170}
+\definecolor{bcol}{RGB}{0,0,255}
+\definecolor{ycol}{RGB}{210,130,0}
+
+\tikzset{every picture/.style={scale=.1,baseline}}
+
+\tikzset{vertex/.style={circle,draw,inner sep=1pt,minimum size=6,text=black}}
+\tikzset{edge/.style={-stealth}}
+\tikzset{label/.style={rectangle,rounded corners,fill=white,inner
+sep=1pt,text=black}}
+
+\tikzset{annot/.style={font=\scriptsize}}
+\tikzset{dash/.style={dashed,draw opacity=0.5}}
+\tikzset{transparent/.style={draw opacity=0.3,fill opacity=0.3}}
+\tikzset{small/.style={minimum size=3.5}}
+\tikzset{large/.style={minimum size=12}}
+\tikzset{huge/.style={minimum size=17}}
+\tikzset{huger/.style={minimum size=27}}
