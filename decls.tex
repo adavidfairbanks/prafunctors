@@ -11,14 +11,16 @@
 \newcommand{\subd}{\mathrel{\!\vcenter{\hbox{\larger[-12]$\blacktriangleleft$}}\!}}
 \newcommand{\idsub}{\id_{\sub}}
 \newcommand{\idsubd}{\id_{\subd}}
-\newcommand{\direct}[1]{\overset{#1}{\to}}
 \newcommand{\posof}{\in}
 \newcommand{\canoniso}{=}
+\newcommand{\backref}{\vcenter{\hbox{\larger[2]$\star$}}}
 
 \newcommand{\bundle}[1]{\overset{#1}{\to}}
 \newcommand{\pos}[1]{#1(1)}
-\newcommand{\posmap}[1]{#1_1}
-\newcommand{\shrink}[2][.5]{\scalebox{#1}{$#2$}}
+\newcommand{\posmap}[1]{{#1}_1}
+% \newcommand{\dirmap}[3]{{#1}^\sharp(#2,#3)}
+\newcommand{\dirmap}[3]{{#1}^\sharp_{#2}(#3)}
+\newcommand{\shrink}[2][.65]{\scalebox{#1}{$#2$}}
 
 
 \definecolor{rcol}{RGB}{255,0,0}

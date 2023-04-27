@@ -4,13 +4,13 @@
 \begin{document}
 \maketitle
 
-Recall that the substitution product of polynomials $p$ and $q$,
-denoted $p \sub q$, is characterized as follows.
+Recall that the substitution product of polynomials $P$ and $Q$,
+denoted $P \sub Q$, is characterized as follows.
 \begin{itemize}
-\item A position $a$ in $p \sub q$ consists of a position $a_\base$ in
-  $p$ and positions $a_f$ in $q$ for each direction $f$ from
+\item A position $a$ in $P \sub Q$ consists of a position $a_\base$ in
+  $P$ and positions $a_f$ in $Q$ for each direction $f$ from
   $a_\base$.
-\item A direction from position $a$ in $p \sub q$ consists of a
+\item A direction from position $a$ in $P \sub Q$ consists of a
   direction $f$ from $a_\base$ and a direction $g$ from $a_f$.
 \end{itemize}
 \vspace{.5em}
@@ -19,7 +19,7 @@ denoted $p \sub q$, is characterized as follows.
     \node [rcol,vertex,huge] (s) at (0, -12) {\scriptsize$a_{\shrink{\base}}$};
     \node [bcol,vertex,huge] (m1) at (-13.5,3) {};
     \node [bcol,vertex,huge] (m2) at (0,3) {};
-    \node [bcol,vertex,huge] (m3) at (13.5,3) {\scriptsize$a$};
+    \node [bcol,vertex,huge] (m3) at (13.5,3) {\scriptsize$a_f$};
     \coordinate (t11) at (-22.25,15.5) {};
     \coordinate (t12) at (-13.5,15.5) {};
     \coordinate (t13) at (-4.75,15.5) {};
@@ -36,11 +36,11 @@ denoted $p \sub q$, is characterized as follows.
     \draw [bcol,edge] (m3) -- (t31);
     \draw [bcol,edge] (m3) -- node [label] {$g$} (t32);
     
-    \node [annot] at (4.5, -12) {\rlap{$\posof p$}};
+    \node [annot] at (4.5, -12) {\rlap{$\posof P$}};
     
-    \node [annot] at (-9, 3) {\rlap{$\posof\!q$}};
-    \node [annot] at (4.5, 3) {\rlap{$\posof\!q$}};
-    \node [annot] at (18, 3) {\rlap{$\posof\!q$}};
+    \node [annot] at (-9, 3) {\rlap{$\posof\!Q$}};
+    \node [annot] at (4.5, 3) {\rlap{$\posof\!Q$}};
+    \node [annot] at (18, 3) {\rlap{$\posof\!Q$}};
   \end{tikzpicture}
   \qquad
   {\Large$=$}
@@ -60,7 +60,7 @@ denoted $p \sub q$, is characterized as follows.
     \draw [edge] (s) -- (t31);
     \draw [edge] (s) -- node [label] {$f \subd g$} (t32);
     
-    \node [annot] at (6, -12) {\rlap{$\posof p \sub q$}};
+    \node [annot] at (6, -12) {\rlap{$\posof P \sub Q$}};
   \end{tikzpicture}
 \end{center}
 \vspace{1em}
@@ -69,233 +69,242 @@ We denote such a direction from such a position in a substitution
 product by $f \subd g$. Accordingly, $\idsubd$ will denote the unique
 direction from the unique position in the unit for substitution
 $\idsub$ (a.k.a. the polynomial $y$).\footnote{Given directions $f$,
-  $g$, and $h$ respectively belonging to polynomials $p$, $q$, and
-  $r$, the directions of the form $(f \subd g)\subd h$ belonging to
-  $(p \sub q) \sub r$ and the directions of the form
-  $f \subd (g \subd h)$ belonging to $p \sub (q \sub r)$ are
+  $g$, and $h$ respectively belonging to polynomials $P$, $Q$, and
+  $R$, the directions of the form $(f \subd g)\subd h$ belonging to
+  $(P \sub Q) \sub R$ and the directions of the form
+  $f \subd (g \subd h)$ belonging to $P \sub (Q \sub R)$ are
   identified under the relevant monoidal coherence isomorphism. Hence
   brackets can be omitted.
 
-  Similarly, for any direction $f$ belonging to a polynomial $p$, we
+  Similarly, for any direction $f$ belonging to a polynomial $P$, we
   have that $\idsubd \subd f$ and $f \subd \idsubd$ (respectively
-  belonging to $\idsub \sub p$ and $p \sub \idsub$) are both
+  belonging to $\idsub \sub P$ and $P \sub \idsub$) are both
   canonically identified with $f$.}
+
+Let $\alpha$ and $\beta$ be maps between polynomials. As we will
+frequently encounter maps composed in parallel via $\sub$, we will
+repeatedly use the following identity.
+\[\dirmap{(\alpha \sub \beta)}{x}{f \subd g} = \underbrace{\dirmap{\alpha}{(x_\base)}{f}}_{\backref}
+  \subd \dirmap{\beta}{(x_{\backref})}{g}.\]
+Or in brief,
+``$(\alpha \sub \beta)^\sharp(f \subd g) = \alpha^\sharp(f)
+\subd\beta^\sharp(g)$ wherever this makes sense.''
 
 \begin{prop}
   Polynomial comonoids are categories.
 \end{prop}
 \begin{proof}
-  Let $c$ be a polynomial comonoid. Denote counit by $\varepsilon$
+  Let $C$ be a polynomial comonoid. Denote counit by $\varepsilon$
   and comultiplication by $\delta$.
 
-\begin{center}
-  \begin{tikzpicture}
-    \node [rcol,vertex,large] (s) at (0, -8) {};
-    \coordinate (t1) at (-9,8) {};
-    \coordinate (t2) at (-3,8) {};
-    \coordinate (t3) at (3,8) {};
-    \coordinate (t4) at (9,8) {};
-    \draw [rcol,edge] (s) -- (t1);
-    \draw [rcol,edge] (s) -- (t2);
-    \draw [rcol,edge] (s) -- (t3);
-    \draw [rcol,edge] (s) -- (t4);
-    \node [annot] at (3, -8) {\rlap{$\posof c$}};
-  \end{tikzpicture}
-  \hspace{-.75em}
-  $\underset{\varepsilon}{\transformto}$
-  \begin{tikzpicture}
-    \coordinate (s) at (0, -9.5) {};
-    \coordinate (t1) at (-9,8) {};
-    \coordinate (t2) at (-3,8) {};
-    \coordinate (t3) at (3,8) {};
-    \coordinate (t4) at (9,8) {};
-    \draw [dash] (s) -- (t1);
-    \draw [edge] (s) -- node [label] {\scriptsize$\idsubd$} (t2);
-    \draw [dash] (s) -- (t3);
-    \draw [dash] (s) -- (t4);
-  \end{tikzpicture}
-  \quad\qquad
-  \begin{tikzpicture}
-    \node [rcol,vertex,large] (s) at (0, -8) {};
-    \coordinate (t1) at (-9,8) {};
-    \coordinate (t2) at (-3,8) {};
-    \coordinate (t3) at (3,8) {};
-    \coordinate (t4) at (9,8) {};
-    \draw [rcol,edge] (s) -- (t1);
-    \draw [rcol,edge] (s) -- (t2);
-    \draw [rcol,edge] (s) -- (t3);
-    \draw [rcol,edge] (s) -- (t4);
-    \node [annot] at (3, -8) {\rlap{$\posof c$}};
-  \end{tikzpicture}
-  \hspace{-.75em}
-  $\underset{\delta}{\transformto}$
-  \hspace{.5em}
-  \begin{tikzpicture}
-    \node [rcol,vertex] (s) at (0, -8) {};
-    \coordinate (t1) at (-9,8) {};
-    \coordinate (t2) at (-3,8) {};
-    \coordinate (t3) at (3,8) {};
-    \coordinate (t4) at (9,8) {};
-    \node [rcol,vertex] (m1) at (-12,0) {};
-    \node [rcol,vertex] (m2) at (-4,0) {};
-    \node [rcol,vertex] (m3) at (4,0) {};
-    \node [rcol,vertex] (m4) at (12,0) {};
-    \draw [rcol,edge] (s) -- (m1);
-    \draw [rcol,edge] (s) -- (m2);
-    \draw [rcol,edge] (s) -- (m3);
-    \draw [rcol,edge] (s) -- (m4);
-    
-    \draw [rcol,edge] (m1) -- (t1);
-    \draw [rcol,edge,bend left=22] (m1) to (t1);
-    \draw [rcol,edge,bend right=22] (m1) to (t1);
-    
-    \draw [rcol,edge] (m2) -- (t1);
-    \draw [rcol,edge] (m2) -- (t2);
-    \draw [rcol,edge] (m2) -- (t3);
-    \draw [rcol,edge] (m2) -- (t4);
-    
-    \draw [rcol,edge] (m3) -- (t1);
-    \draw [rcol,edge] (m3) -- (t3);
-    \draw [rcol,edge,bend left=10] (m3) to (t4);
-    \draw [rcol,edge,bend right=10] (m3) to (t4);
-    
-    \draw [rcol,edge] (m4) -- (t4);
-    
-    \node [annot] at (1.5, -8) {\rlap{$\posof c$}};
-    
-    \node [annot] at (-10.5, 0) {\rlap{$\posof\!c$}};
-    \node [annot] at (-2.5, 0) {\rlap{$\posof\!c$}};
-    \node [annot] at (5.5, 0) {\rlap{$\posof\!c$}};
-    \node [annot] at (13.5, 0) {\rlap{$\posof\!c$}};
-  \end{tikzpicture}
-\end{center}
+  \begin{center}
+    \begin{tikzpicture}
+      \node [rcol,vertex,large] (s) at (0, -8) {};
+      \coordinate (t1) at (-9,8) {};
+      \coordinate (t2) at (-3,8) {};
+      \coordinate (t3) at (3,8) {};
+      \coordinate (t4) at (9,8) {};
+      \draw [rcol,edge] (s) -- (t1);
+      \draw [rcol,edge] (s) -- (t2);
+      \draw [rcol,edge] (s) -- (t3);
+      \draw [rcol,edge] (s) -- (t4);
+      \node [annot] at (3, -8) {\rlap{$\posof C$}};
+    \end{tikzpicture}
+    \hspace{-.75em}
+    $\underset{\varepsilon}{\transformto}$
+    \begin{tikzpicture}
+      \coordinate (s) at (0, -9.5) {};
+      \coordinate (t1) at (-9,8) {};
+      \coordinate (t2) at (-3,8) {};
+      \coordinate (t3) at (3,8) {};
+      \coordinate (t4) at (9,8) {};
+      \draw [dash] (s) -- (t1);
+      \draw [edge] (s) -- node [label] {\scriptsize$\idsubd$} (t2);
+      \draw [dash] (s) -- (t3);
+      \draw [dash] (s) -- (t4);
+    \end{tikzpicture}
+    \quad\qquad
+    \begin{tikzpicture}
+      \node [rcol,vertex,large] (s) at (0, -8) {};
+      \coordinate (t1) at (-9,8) {};
+      \coordinate (t2) at (-3,8) {};
+      \coordinate (t3) at (3,8) {};
+      \coordinate (t4) at (9,8) {};
+      \draw [rcol,edge] (s) -- (t1);
+      \draw [rcol,edge] (s) -- (t2);
+      \draw [rcol,edge] (s) -- (t3);
+      \draw [rcol,edge] (s) -- (t4);
+      \node [annot] at (3, -8) {\rlap{$\posof C$}};
+    \end{tikzpicture}
+    \hspace{-.75em}
+    $\underset{\delta}{\transformto}$
+    \hspace{.5em}
+    \begin{tikzpicture}
+      \node [rcol,vertex] (s) at (0, -8) {};
+      \coordinate (t1) at (-9,8) {};
+      \coordinate (t2) at (-3,8) {};
+      \coordinate (t3) at (3,8) {};
+      \coordinate (t4) at (9,8) {};
+      \node [rcol,vertex] (m1) at (-12,0) {};
+      \node [rcol,vertex] (m2) at (-4,0) {};
+      \node [rcol,vertex] (m3) at (4,0) {};
+      \node [rcol,vertex] (m4) at (12,0) {};
+      \draw [rcol,edge] (s) -- (m1);
+      \draw [rcol,edge] (s) -- (m2);
+      \draw [rcol,edge] (s) -- (m3);
+      \draw [rcol,edge] (s) -- (m4);
+      
+      \draw [rcol,edge] (m1) -- (t1);
+      \draw [rcol,edge,bend left=22] (m1) to (t1);
+      \draw [rcol,edge,bend right=22] (m1) to (t1);
+      
+      \draw [rcol,edge] (m2) -- (t1);
+      \draw [rcol,edge] (m2) -- (t2);
+      \draw [rcol,edge] (m2) -- (t3);
+      \draw [rcol,edge] (m2) -- (t4);
+      
+      \draw [rcol,edge] (m3) -- (t1);
+      \draw [rcol,edge] (m3) -- (t3);
+      \draw [rcol,edge,bend left=10] (m3) to (t4);
+      \draw [rcol,edge,bend right=10] (m3) to (t4);
+      
+      \draw [rcol,edge] (m4) -- (t4);
+      
+      \node [annot] at (1.5, -8) {\rlap{$\posof C$}};
+      
+      \node [annot] at (-10.5, 0) {\rlap{$\posof\!C$}};
+      \node [annot] at (-2.5, 0) {\rlap{$\posof\!C$}};
+      \node [annot] at (5.5, 0) {\rlap{$\posof\!C$}};
+      \node [annot] at (13.5, 0) {\rlap{$\posof\!C$}};
+    \end{tikzpicture}
+  \end{center}
 
-Observe first that the right unit law forces $(\posmap{\delta}(a))_\base = a$
-for all $a \in \pos{c}$.
+  Observe first that the right unit law forces $(\posmap{\delta}(a))_\base = a$
+  for all $a \in \pos{C}$.
 
-\begin{center}
-  \begin{tikzpicture}
-    \coordinate (s) at (0, -8) {};
-    \coordinate (t1) at (-9,8) {};
-    \coordinate (t2) at (-3,8) {};
-    \coordinate (t3) at (3,8) {};
-    \coordinate (t4) at (9,8) {};
-    \node [rcol,vertex,transparent] (m1) at (-12,0) {};
-    \node [rcol,vertex] (m2) at (-4,0) {};
-    \node [rcol,vertex,transparent] (m3) at (4,0) {};
-    \node [rcol,vertex,transparent] (m4) at (12,0) {};
-    \draw [dash] (s) -- (m1);
-    \draw [edge] (s) -- (m2);
-    \draw [dash] (s) -- (m3);
-    \draw [dash] (s) -- (m4);
-    
-    \draw [rcol,edge,transparent] (m1) -- (t1);
-    \draw [rcol,edge,bend left=22,transparent] (m1) to (t1);
-    \draw [rcol,edge,bend right=22,transparent] (m1) to (t1);
-    
-    \draw [rcol,edge] (m2) -- (t1);
-    \draw [rcol,edge] (m2) -- (t2);
-    \draw [rcol,edge] (m2) -- (t3);
-    \draw [rcol,edge] (m2) -- (t4);
-    
-    \draw [rcol,edge,transparent] (m3) -- (t1);
-    \draw [rcol,edge,transparent] (m3) -- (t3);
-    \draw [rcol,edge,bend left=10,transparent] (m3) to (t4);
-    \draw [rcol,edge,bend right=10,transparent] (m3) to (t4);
-    
-    \draw [rcol,edge,transparent] (m4) -- (t4);
-    
-    \node at (0, -13) {$(\varepsilon \sub \id_c) \circ \delta$};
-  \end{tikzpicture}
-  \quad
-  $\canoniso$
-  \begin{tikzpicture}
-    \node [rcol,vertex,large] (s) at (0, -8) {};
-    \coordinate (t1) at (-9,8) {};
-    \coordinate (t2) at (-3,8) {};
-    \coordinate (t3) at (3,8) {};
-    \coordinate (t4) at (9,8) {};
-    \draw [rcol,edge] (s) -- (t1);
-    \draw [rcol,edge] (s) -- (t2);
-    \draw [rcol,edge] (s) -- (t3);
-    \draw [rcol,edge] (s) -- (t4);
-    
-    \node at (0, -13) {$\id_c$};
-  \end{tikzpicture}
-  $\canoniso$
-  \quad
-  \begin{tikzpicture}
-    \node [rcol,vertex] (s) at (0, -8) {};
-    \coordinate (t1) at (-9,8) {};
-    \coordinate (t2) at (-3,8) {};
-    \coordinate (t3) at (3,8) {};
-    \coordinate (t4) at (9,8) {};
-    \coordinate (m1) at (-12,0) {};
-    \coordinate (m2) at (-4,0) {};
-    \coordinate (m3) at (4,0) {};
-    \coordinate (m4) at (12,0) {};
-    \draw [rcol,edge] (s) -- (m1);
-    \draw [rcol,edge] (s) -- (m2);
-    \draw [rcol,edge] (s) -- (m3);
-    \draw [rcol,edge] (s) -- (m4);
-    
-    \draw [edge] (m1) -- (t1);
-    \draw [dash,bend left=22] (m1) to (t1);
-    \draw [dash,bend right=22] (m1) to (t1);
-    
-    \draw [dash] (m2) -- (t1);
-    \draw [edge] (m2) -- (t2);
-    \draw [dash] (m2) -- (t3);
-    \draw [dash] (m2) -- (t4);
-    
-    \draw [dash] (m3) -- (t1);
-    \draw [edge] (m3) -- (t3);
-    \draw [dash,bend left=10] (m3) to (t4);
-    \draw [dash,bend right=10] (m3) to (t4);
-    
-    \draw [edge] (m4) -- (t4);
-    
-    \node at (0, -13) {$(\id_c \sub \varepsilon) \circ \delta$};
-  \end{tikzpicture}
-\end{center}
-Therefore the expression $(\posmap{\delta}(a))_f$ for $f \in c[a]$ has a
-well-defined meaning.
+  \begin{center}
+    \begin{tikzpicture}
+      \coordinate (s) at (0, -8) {};
+      \coordinate (t1) at (-9,8) {};
+      \coordinate (t2) at (-3,8) {};
+      \coordinate (t3) at (3,8) {};
+      \coordinate (t4) at (9,8) {};
+      \node [rcol,vertex,transparent] (m1) at (-12,0) {};
+      \node [rcol,vertex] (m2) at (-4,0) {};
+      \node [rcol,vertex,transparent] (m3) at (4,0) {};
+      \node [rcol,vertex,transparent] (m4) at (12,0) {};
+      \draw [dash] (s) -- (m1);
+      \draw [edge] (s) -- (m2);
+      \draw [dash] (s) -- (m3);
+      \draw [dash] (s) -- (m4);
+      
+      \draw [rcol,edge,transparent] (m1) -- (t1);
+      \draw [rcol,edge,bend left=22,transparent] (m1) to (t1);
+      \draw [rcol,edge,bend right=22,transparent] (m1) to (t1);
+      
+      \draw [rcol,edge] (m2) -- (t1);
+      \draw [rcol,edge] (m2) -- (t2);
+      \draw [rcol,edge] (m2) -- (t3);
+      \draw [rcol,edge] (m2) -- (t4);
+      
+      \draw [rcol,edge,transparent] (m3) -- (t1);
+      \draw [rcol,edge,transparent] (m3) -- (t3);
+      \draw [rcol,edge,bend left=10,transparent] (m3) to (t4);
+      \draw [rcol,edge,bend right=10,transparent] (m3) to (t4);
+      
+      \draw [rcol,edge,transparent] (m4) -- (t4);
+      
+      \node at (0, -13) {$(\varepsilon \sub \id_C) \circ \delta$};
+    \end{tikzpicture}
+    \quad
+    $\canoniso$
+    \begin{tikzpicture}
+      \node [rcol,vertex,large] (s) at (0, -8) {};
+      \coordinate (t1) at (-9,8) {};
+      \coordinate (t2) at (-3,8) {};
+      \coordinate (t3) at (3,8) {};
+      \coordinate (t4) at (9,8) {};
+      \draw [rcol,edge] (s) -- (t1);
+      \draw [rcol,edge] (s) -- (t2);
+      \draw [rcol,edge] (s) -- (t3);
+      \draw [rcol,edge] (s) -- (t4);
+      
+      \node at (0, -13) {$\id_C$};
+    \end{tikzpicture}
+    $\canoniso$
+    \quad
+    \begin{tikzpicture}
+      \node [rcol,vertex] (s) at (0, -8) {};
+      \coordinate (t1) at (-9,8) {};
+      \coordinate (t2) at (-3,8) {};
+      \coordinate (t3) at (3,8) {};
+      \coordinate (t4) at (9,8) {};
+      \coordinate (m1) at (-12,0) {};
+      \coordinate (m2) at (-4,0) {};
+      \coordinate (m3) at (4,0) {};
+      \coordinate (m4) at (12,0) {};
+      \draw [rcol,edge] (s) -- (m1);
+      \draw [rcol,edge] (s) -- (m2);
+      \draw [rcol,edge] (s) -- (m3);
+      \draw [rcol,edge] (s) -- (m4);
+      
+      \draw [edge] (m1) -- (t1);
+      \draw [dash,bend left=22] (m1) to (t1);
+      \draw [dash,bend right=22] (m1) to (t1);
+      
+      \draw [dash] (m2) -- (t1);
+      \draw [edge] (m2) -- (t2);
+      \draw [dash] (m2) -- (t3);
+      \draw [dash] (m2) -- (t4);
+      
+      \draw [dash] (m3) -- (t1);
+      \draw [edge] (m3) -- (t3);
+      \draw [dash,bend left=10] (m3) to (t4);
+      \draw [dash,bend right=10] (m3) to (t4);
+      
+      \draw [edge] (m4) -- (t4);
+      
+      \node at (0, -13) {$(\id_C \sub \varepsilon) \circ \delta$};
+    \end{tikzpicture}
+  \end{center}
+  Therefore the expression $(\posmap{\delta}(a))_f$ for $f \in C[a]$ has a
+  well-defined meaning.
 
-We gather the data of a category $\mathcal{C}$.
-\begin{itemize}
-\item The set of objects $\Ob(\mathcal{C})$ is $\pos{c}$, i.e., the set
-  of positions in $c$.
-\item The set of arrows $\Arr(\mathcal{C})$ is
-  $\sum_{a \in \pos{c}}c[a]$, i.e., the set of all directions in $c$.
-\item The source map $s$ sends each $f \in c[a]$ to $a$. (Hence the
-  polynomial $c$ is described by the bundle
-  $\Arr(\mathcal{C}) \bundle{s} \Ob(\mathcal{C})$.)
-\item The target map $t$ sends each $f \in c[a]$ to $(\posmap{\delta}(a))_f$.
-\item The identity map $e$ sends each $a \in \pos{c}$ to
-  $\varepsilon^\sharp(a, \idsubd)$.
-\item The composition map $m$ sends each pair of compatible
-  arrows ${f \in c[a]}, {g \in c[t(f)]}$ to $\delta^\sharp(a, f \subd g)$.
-\end{itemize}
+  We gather the data of a category $\mathcal{C}$.
+  \begin{itemize}
+  \item The set of objects $\Ob(\mathcal{C})$ is $\pos{C}$, i.e., the set
+    of positions in $C$.
+  \item The set of arrows $\Arr(\mathcal{C})$ is
+    $\sum_{a \in \pos{C}}C[a]$, i.e., the set of all directions in $C$.
+  \item The source map $s$ sends each $f \in C[a]$ to $a$. (Hence the
+    polynomial $C$ is described by the bundle
+    $\Arr(\mathcal{C}) \bundle{s} \Ob(\mathcal{C})$.)
+  \item The target map $t$ sends each $f \in C[a]$ to $(\posmap{\delta}(a))_f$.
+  \item The identity map $e$ sends each $a \in \pos{C}$ to
+    $\dirmap{\varepsilon}{a}{\idsubd}$.
+  \item The composition map $m$ sends each pair of compatible
+    arrows ${f \in C[a]}, {g \in C[t(f)]}$ to $\dirmap{\delta}{a}{f \subd g}$.
+  \end{itemize}
 
-Now we verify these data satisfy the laws of a category.
-\begin{itemize}
-\item The law $s(e(a)) = a$ is true by construction; $e(a)$ is a
-  direction from the position $a$.
-\item The law $t(e(a)) = a$ is forced to hold by the comonoid left
-  unit law, which identifies  with .
-\item The law $s(m(f, g)) = s(f)$ is true by construction; $m(f, g)$
-  is a direction from the position $s(f)$.
-\item The law $t(m(f, g)) = t(g)$ .
-\item The left unit law $m(e(s(f)), f) = f$ is directly expressed by
-  the comonoid left unit law.
-\item The right unit law $m(f, e(t(f))) = f$ is directly expressed by
-  the comonoid right unit law.
-\item The associativity law $m(m(f, g) h) = m(f, m(g, h))$ is directly
-  expressed by the comonoid associativity law.
-\end{itemize}
+  Now we verify these data satisfy the laws of a category.
+  \begin{itemize}
+  \item The law $s(e(a)) = a$ is true by construction; $e(a)$ is a
+    direction from the position $a$.
+  \item The law $t(e(a)) = a$ is forced to hold by the comonoid left
+    unit law, which identifies  with .
+  \item The law $s(m(f, g)) = s(f)$ is true by construction; $m(f, g)$
+    is a direction from the position $s(f)$.
+  \item The law $t(m(f, g)) = t(g)$ .
+  \item The left unit law $m(e(s(f)), f) = f$ is directly expressed by
+    the comonoid left unit law.
+  \item The right unit law $m(f, e(t(f))) = f$ is directly expressed by
+    the comonoid right unit law.
+  \item The associativity law $m(m(f, g) h) = m(f, m(g, h))$ is directly
+    expressed by the comonoid associativity law.
+  \end{itemize}
 
-\begin{center}
-  \begin{tikzpicture}
+  \begin{center}
+    \begin{tikzpicture}
       \node [rcol,vertex,small] (s) at (0, -8) {};
       \coordinate (t1) at (-9,8) {};
       \coordinate (t2) at (-3,8) {};
@@ -317,8 +326,8 @@ Now we verify these data satisfy the laws of a category.
       \node [rcol,vertex] (m4) at (12,0) {};
       
       \draw [rcol,edge] (m1_) -- (m1);
-      \draw [rcol,edge,bend left=22] (m1_) to (m1);
-      \draw [rcol,edge,bend right=22] (m1_) to (m1);
+      \draw [rcol,edge,bend left=32] (m1_) to (m1);
+      \draw [rcol,edge,bend right=32] (m1_) to (m1);
       
       \draw [rcol,edge] (m2_) -- (m1);
       \draw [rcol,edge] (m2_) -- (m2);
@@ -349,12 +358,12 @@ Now we verify these data satisfy the laws of a category.
       
       \draw [rcol,edge] (m4) -- (t4);
       
-      \node at (0, -13) {$(\delta \sub \id_c) \circ \delta$};
-  \end{tikzpicture}
-  \quad
-  $\canoniso$
-  \quad
-  \begin{tikzpicture}
+      \node at (0, -13) {$(\delta \sub \id_C) \circ \delta$};
+    \end{tikzpicture}
+    \quad
+    $\canoniso$
+    \quad
+    \begin{tikzpicture}
       \node [rcol,vertex] (s) at (0, -8) {};
       \coordinate (t1) at (-9,8) {};
       \coordinate (t2) at (-3,8) {};
@@ -440,17 +449,17 @@ Now we verify these data satisfy the laws of a category.
       
       \draw [rcol,edge] (m41) -- (t4);
       
-      \node at (0, -13) {$(\id_c \sub \delta) \circ \delta$};
-  \end{tikzpicture}
-\end{center}
+      \node at (0, -13) {$(\id_C \sub \delta) \circ \delta$};
+    \end{tikzpicture}
+  \end{center}
 
-Conversely, let $\mathcal{C}$ be a category. We immediately obtain the
-bundle ${\Arr(\mathcal{C})\bundle{s}\Ob(\mathcal{C})}$. Let $c$ denote
-the polynomial described by this bundle (the ``outfacing polynomial''
-of $\mathcal{C}$); we exhibit a comonoid struture on $c$.c
+  Conversely, let $\mathcal{C}$ be a category. We immediately obtain the
+  bundle ${\Arr(\mathcal{C})\bundle{s}\Ob(\mathcal{C})}$. Let $C$ denote
+  the polynomial described by this bundle (the ``outfacing polynomial''
+  of $\mathcal{C}$); we exhibit a comonoid struture on $C$.
 
-Lastly, these translation processes between polynomial comonoids
-and categories are inverse by construction.
+  Lastly, these translation processes between polynomial comonoids
+  and categories are inverse by construction.
 \end{proof}
 
 \begin{prop}
@@ -458,128 +467,558 @@ and categories are inverse by construction.
   that copresheaf's category of elements.
 \end{prop}
 \begin{proof}
-  Let $c$ be a polynomial comonoid and let $m$ be a left comodule on
-  $c$. Denote left comodule comultiplication by $\lambda$.
+  Let $C$ be a polynomial comonoid and let $M$ be a left comodule on
+  $C$. Denote left comodule comultiplication by $\lambda$.
 
   \begin{center}
     \begin{tikzpicture}
       \node [ycol,vertex,large] (s) at (0, -8) {};
-      \coordinate (t1) at (-9,8) {};
-      \coordinate (t2) at (-3,8) {};
-      \coordinate (t3) at (3,8) {};
-      \coordinate (t4) at (9,8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
       \draw [ycol,edge] (s) -- (t1);
       \draw [ycol,edge] (s) -- (t2);
       \draw [ycol,edge] (s) -- (t3);
       \draw [ycol,edge] (s) -- (t4);
-      \node [annot] at (3, -8) {\rlap{$\posof m$}};
+      \draw [ycol,edge] (s) -- (t5);
+      \node [annot] at (3, -8) {\rlap{$\posof M$}};
     \end{tikzpicture}
     \hspace{-.75em}
     $\underset{\lambda}{\transformto}$
     \hspace{.5em}
     \begin{tikzpicture}
       \node [rcol,vertex] (s) at (0, -8) {};
-      \coordinate (t1) at (-9,8) {};
-      \coordinate (t2) at (-3,8) {};
-      \coordinate (t3) at (3,8) {};
-      \coordinate (t4) at (9,8) {};
-      \node [ycol,vertex] (m1) at (-12,0) {};
-      \node [ycol,vertex] (m2) at (-4,0) {};
-      \node [ycol,vertex] (m3) at (4,0) {};
-      \node [ycol,vertex] (m4) at (12,0) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+      \node [ycol,vertex] (m1) at (-15,0) {};
+      \node [ycol,vertex] (m2) at (-5,0) {};
+      \node [ycol,vertex] (m3) at (5,0) {};
+      \node [ycol,vertex] (m4) at (15,0) {};
       \draw [rcol,edge] (s) -- (m1);
       \draw [rcol,edge] (s) -- (m2);
       \draw [rcol,edge] (s) -- (m3);
       \draw [rcol,edge] (s) -- (m4);
       
-      \draw [ycol,edge] (m1) -- (t1);
+      \draw [ycol,edge] (m2) -- (t1);
+      \draw [ycol,edge] (m2) -- (t2);
+      \draw [ycol,edge] (m2) -- (t3);
+      \draw [ycol,edge] (m2) -- (t4);
+      \draw [ycol,edge] (m2) -- (t5);
+      
+      \draw [ycol,edge,bend left=11] (m3) to (t3);
+      \draw [ycol,edge,bend right=11] (m3) to (t3);
+      \draw [ycol,edge,bend left=11] (m3) to (t4);
+      \draw [ycol,edge,bend right=11] (m3) to (t4);
+      \draw [ycol,edge,bend left=11] (m3) to (t5);
+      \draw [ycol,edge,bend right=11] (m3) to (t5);
+      
+      \draw [ycol,edge] (m4) -- (t4);
+      \draw [ycol,edge] (m4) -- (t5);
+      
+      \node [annot] at (1.5, -8) {\rlap{$\posof C$}};
+      
+      \node [annot] at (-13, 0) {\rlap{$\posof\!M$}};
+      \node [annot] at (-3, 0) {\rlap{$\posof\!M$}};
+      \node [annot] at (7, 0) {\rlap{$\posof\!M$}};
+      \node [annot] at (17, 0) {\rlap{$\posof\!M$}};
+    \end{tikzpicture}
+  \end{center}
+
+  \begin{center}
+    \begin{tikzpicture}
+      \coordinate (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+
+      \node [ycol,vertex,transparent] (m1) at (-15,0) {};
+      \node [ycol,vertex] (m2) at (-5,0) {};
+      \node [ycol,vertex,transparent] (m3) at (5,0) {};
+      \node [ycol,vertex,transparent] (m4) at (15,0) {};
+      \draw [dash] (s) -- (m1);
+      \draw [edge] (s) -- (m2);
+      \draw [dash] (s) -- (m3);
+      \draw [dash] (s) -- (m4);
       
       \draw [ycol,edge] (m2) -- (t1);
       \draw [ycol,edge] (m2) -- (t2);
       \draw [ycol,edge] (m2) -- (t3);
       \draw [ycol,edge] (m2) -- (t4);
+      \draw [ycol,edge] (m2) -- (t5);
       
-      \draw [ycol,edge] (m3) -- (t1);
-      \draw [ycol,edge] (m3) -- (t2);
-      \draw [ycol,edge] (m3) -- (t3);
-      \draw [ycol,edge,bend left=15] (m3) to (t4);
-      \draw [ycol,edge,bend right=15] (m3) to (t4);
+      \draw [ycol,edge,transparent,bend left=11] (m3) to (t3);
+      \draw [ycol,edge,transparent,bend right=11] (m3) to (t3);
+      \draw [ycol,edge,transparent,bend left=11] (m3) to (t4);
+      \draw [ycol,edge,transparent,bend right=11] (m3) to (t4);
+      \draw [ycol,edge,transparent,bend left=11] (m3) to (t5);
+      \draw [ycol,edge,transparent,bend right=11] (m3) to (t5);
       
-      \draw [ycol,edge] (m4) -- (t4);
+      \draw [ycol,transparent,edge] (m4) -- (t4);
+      \draw [ycol,transparent,edge] (m4) -- (t5);
       
-      \node [annot] at (1.5, -8) {\rlap{$\posof c$}};
+      \node at (0, -13) {$(\varepsilon \sub \id_M) \circ \lambda$};
+    \end{tikzpicture}
+    \quad
+    $\canoniso$
+    \begin{tikzpicture}
+      \node [ycol,vertex,large] (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+      \draw [ycol,edge] (s) -- (t1);
+      \draw [ycol,edge] (s) -- (t2);
+      \draw [ycol,edge] (s) -- (t3);
+      \draw [ycol,edge] (s) -- (t4);
+      \draw [ycol,edge] (s) -- (t5);
       
-      \node [annot] at (-10.5, 0) {\rlap{$\posof\!m$}};
-      \node [annot] at (-2.5, 0) {\rlap{$\posof\!m$}};
-      \node [annot] at (5.5, 0) {\rlap{$\posof\!m$}};
-      \node [annot] at (13.5, 0) {\rlap{$\posof\!m$}};
+      \node at (0, -13) {$\id_M$};
     \end{tikzpicture}
   \end{center}
 
+  
+  \begin{center}
+    \begin{tikzpicture}
+      \node [rcol,vertex,small] (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+
+      
+      \node [rcol,vertex,small] (m1_) at (-15,-4) {};
+      \node [rcol,vertex,small] (m2_) at (-5,-4) {};
+      \node [rcol,vertex,small] (m3_) at (5,-4) {};
+      \node [rcol,vertex,small] (m4_) at (15,-4) {};
+      
+      \node [ycol,vertex] (m1) at (-15,0) {};
+      \node [ycol,vertex] (m2) at (-5,0) {};
+      \node [ycol,vertex] (m3) at (5,0) {};
+      \node [ycol,vertex] (m4) at (15,0) {};
+      
+      \draw [rcol,edge] (s) -- (m1_);
+      \draw [rcol,edge] (s) -- (m2_);
+      \draw [rcol,edge] (s) -- (m3_);
+      \draw [rcol,edge] (s) -- (m4_);
+      
+      \draw [rcol,edge] (m1_) -- (m1);
+      \draw [rcol,edge,bend left=32] (m1_) to (m1);
+      \draw [rcol,edge,bend right=32] (m1_) to (m1);
+      
+      \draw [rcol,edge] (m2_) -- (m1);
+      \draw [rcol,edge] (m2_) -- (m2);
+      \draw [rcol,edge] (m2_) -- (m3);
+      \draw [rcol,edge] (m2_) -- (m4);
+      
+      \draw [rcol,edge] (m3_) -- (m1);
+      \draw [rcol,edge] (m3_) -- (m3);
+      \draw [rcol,edge,bend left=10] (m3_) to (m4);
+      \draw [rcol,edge,bend right=10] (m3_) to (m4);
+      
+      \draw [rcol,edge] (m4_) -- (m4);
+
+      
+      \draw [rcol,edge] (s) -- (m1);
+      \draw [rcol,edge] (s) -- (m2);
+      \draw [rcol,edge] (s) -- (m3);
+      \draw [rcol,edge] (s) -- (m4);
+      
+      \draw [ycol,edge] (m2) -- (t1);
+      \draw [ycol,edge] (m2) -- (t2);
+      \draw [ycol,edge] (m2) -- (t3);
+      \draw [ycol,edge] (m2) -- (t4);
+      \draw [ycol,edge] (m2) -- (t5);
+      
+      \draw [ycol,edge,bend left=11] (m3) to (t3);
+      \draw [ycol,edge,bend right=11] (m3) to (t3);
+      \draw [ycol,edge,bend left=11] (m3) to (t4);
+      \draw [ycol,edge,bend right=11] (m3) to (t4);
+      \draw [ycol,edge,bend left=11] (m3) to (t5);
+      \draw [ycol,edge,bend right=11] (m3) to (t5);
+      
+      \draw [ycol,edge] (m4) -- (t4);
+      \draw [ycol,edge] (m4) -- (t5);
+      
+      
+      \node at (0, -13) {$(\delta \sub \id_M) \circ \lambda$};
+    \end{tikzpicture}
+    \quad
+    $\canoniso$
+    \quad
+    \begin{tikzpicture}
+      \node [rcol,vertex] (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+      
+      \node [ycol,vertex,small] (m11) at (-18,4) {};
+      \node [ycol,vertex,small] (m12) at (-15,4) {};
+      \node [ycol,vertex,small] (m13) at (-12,4) {};
+      \node [ycol,vertex,small] (m21) at (-8.9,4) {};
+      \node [ycol,vertex,small] (m22) at (-6.3,4) {};
+      \node [ycol,vertex,small] (m23) at (-3.7,4) {};
+      \node [ycol,vertex,small] (m24) at (-1.2,4) {};
+      \node [ycol,vertex,small] (m31) at (1.2,4) {};
+      \node [ycol,vertex,small] (m32) at (3.7,4) {};
+      \node [ycol,vertex,small] (m33) at (6.3,4) {};
+      \node [ycol,vertex,small] (m34) at (8.9,4) {};
+      \node [ycol,vertex,small] (m41) at (15,4) {};
+      
+      \node [rcol,vertex,small] (m1) at (-15,0) {};
+      \node [rcol,vertex,small] (m2) at (-5,0) {};
+      \node [rcol,vertex,small] (m3) at (5,0) {};
+      \node [rcol,vertex,small] (m4) at (15,0) {};
+      
+      \draw [rcol,edge] (m1) -- (m11);
+      \draw [rcol,edge] (m1) -- (m12);
+      \draw [rcol,edge] (m1) -- (m13);
+      \draw [rcol,edge] (m2) -- (m21);
+      \draw [rcol,edge] (m2) -- (m22);
+      \draw [rcol,edge] (m2) -- (m23);
+      \draw [rcol,edge] (m2) -- (m24);
+      \draw [rcol,edge] (m3) -- (m31);
+      \draw [rcol,edge] (m3) -- (m32);
+      \draw [rcol,edge] (m3) -- (m33);
+      \draw [rcol,edge] (m3) -- (m34);
+      \draw [rcol,edge] (m4) -- (m41);
+      
+      \draw [rcol,edge] (s) -- (m1);
+      \draw [rcol,edge] (s) -- (m2);
+      \draw [rcol,edge] (s) -- (m3);
+      \draw [rcol,edge] (s) -- (m4);
+      
+      \draw [ycol,edge] (m22) -- (t1);
+      \draw [ycol,edge] (m22) -- (t2);
+      \draw [ycol,edge] (m22) -- (t3);
+      \draw [ycol,edge] (m22) -- (t4);
+      \draw [ycol,edge] (m22) -- (t5);
+      
+      \draw [ycol,edge,bend left=5] (m23) to (t3);
+      \draw [ycol,edge,bend right=5] (m23) to (t3);
+      \draw [ycol,edge,bend left=3] (m23) to (t4);
+      \draw [ycol,edge,bend right=3] (m23) to (t4);
+      \draw [ycol,edge,bend left=3] (m23) to (t5);
+      \draw [ycol,edge,bend right=3] (m23) to (t5);
+      
+      \draw [ycol,edge] (m24) -- (t4);
+      \draw [ycol,edge] (m24) -- (t5);
+
+      
+      \draw [ycol,edge,bend left=5] (m32) to (t3);
+      \draw [ycol,edge,bend right=5] (m32) to (t3);
+      \draw [ycol,edge,bend left=3] (m32) to (t4);
+      \draw [ycol,edge,bend right=3] (m32) to (t4);
+      \draw [ycol,edge,bend left=3] (m32) to (t5);
+      \draw [ycol,edge,bend right=3] (m32) to (t5);
+      \draw [ycol,edge] (m33) -- (t4);
+      \draw [ycol,edge] (m33) -- (t5);
+      \draw [ycol,edge] (m34) -- (t4);
+      \draw [ycol,edge] (m34) -- (t5);
+
+      
+      \draw [ycol,edge] (m41) -- (t4);
+      \draw [ycol,edge] (m41) -- (t5);
+      
+      
+      \node at (0, -13) {$(\id_C \sub \lambda) \circ \lambda$};
+    \end{tikzpicture}
+  \end{center}
+  
 \end{proof}
 
 \begin{prop}
   A polynomial right comodule amounts to a set of copresheaves.
 \end{prop}
 \begin{proof}
-  Let $d$ be a polynomial comonoid and let $m$ be a right comodule on
-  $d$. Denote right comodule comultiplication by $\rho$.
+  Let $D$ be a polynomial comonoid and let $M$ be a right comodule on
+  $D$. Denote right comodule comultiplication by $\rho$.
 
-\begin{center}
-  \begin{tikzpicture}
-    \node [ycol,vertex,large] (s) at (0, -8) {};
-    \coordinate (t1) at (-9,8) {};
-    \coordinate (t2) at (-3,8) {};
-    \coordinate (t3) at (3,8) {};
-    \coordinate (t4) at (9,8) {};
-    \draw [ycol,edge] (s) -- (t1);
-    \draw [ycol,edge] (s) -- (t2);
-    \draw [ycol,edge] (s) -- (t3);
-    \draw [ycol,edge] (s) -- (t4);
-    \node [annot] at (3, -8) {\rlap{$\posof m$}};
-  \end{tikzpicture}
-  \hspace{-.75em}
-  $\underset{\rho}{\transformto}$
-  \hspace{.5em}
-  \begin{tikzpicture}
-    \node [ycol,vertex] (s) at (0, -8) {};
-    \coordinate (t1) at (-9,8) {};
-    \coordinate (t2) at (-3,8) {};
-    \coordinate (t3) at (3,8) {};
-    \coordinate (t4) at (9,8) {};
-    \node [bcol,vertex] (m1) at (-12,0) {};
-    \node [bcol,vertex] (m2) at (-4,0) {};
-    \node [bcol,vertex] (m3) at (4,0) {};
-    \node [bcol,vertex] (m4) at (12,0) {};
-    \draw [ycol,edge] (s) -- (m1);
-    \draw [ycol,edge] (s) -- (m2);
-    \draw [ycol,edge] (s) -- (m3);
-    \draw [ycol,edge] (s) -- (m4);
-    
-    \draw [bcol,edge] (m1) -- (t1);
-    
-    \draw [bcol,edge] (m2) -- (t1);
-    \draw [bcol,edge] (m2) -- (t2);
-    \draw [bcol,edge] (m2) -- (t3);
-    \draw [bcol,edge] (m2) -- (t4);
-    
-    \draw [bcol,edge] (m3) -- (t1);
-    \draw [bcol,edge] (m3) -- (t2);
-    \draw [bcol,edge] (m3) -- (t3);
-    \draw [bcol,edge,bend left=15] (m3) to (t4);
-    \draw [bcol,edge,bend right=15] (m3) to (t4);
-    
-    \draw [bcol,edge] (m4) -- (t4);
-    
-    \node [annot] at (1.5, -8) {\rlap{$\posof m$}};
-    
-    \node [annot] at (-10.5, 0) {\rlap{$\posof\!d$}};
-    \node [annot] at (-2.5, 0) {\rlap{$\posof\!d$}};
-    \node [annot] at (5.5, 0) {\rlap{$\posof\!d$}};
-    \node [annot] at (13.5, 0) {\rlap{$\posof\!d$}};
-  \end{tikzpicture}
-\end{center}
+  \begin{center}
+    \begin{tikzpicture}
+      \node [ycol,vertex,large] (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+      \draw [ycol,edge] (s) -- (t1);
+      \draw [ycol,edge] (s) -- (t2);
+      \draw [ycol,edge] (s) -- (t3);
+      \draw [ycol,edge] (s) -- (t4);
+      \draw [ycol,edge] (s) -- (t5);
+      \node [annot] at (3, -8) {\rlap{$\posof M$}};
+    \end{tikzpicture}
+    \hspace{-.75em}
+    $\underset{\rho}{\transformto}$
+    \hspace{.5em}
+    \begin{tikzpicture}
+      \node [ycol,vertex] (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (-0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+      \node [bcol,vertex] (m1) at (-16,0) {};
+      \node [bcol,vertex] (m2) at (-8,0) {};
+      \node [bcol,vertex] (m3) at (0,0) {};
+      \node [bcol,vertex] (m4) at (8,0) {};
+      \node [bcol,vertex] (m5) at (16,0) {};
+      \draw [ycol,edge] (s) -- (m1);
+      \draw [ycol,edge] (s) -- (m2);
+      \draw [ycol,edge] (s) -- (m3);
+      \draw [ycol,edge] (s) -- (m4);
+      \draw [ycol,edge] (s) -- (m5);
+      
+      \draw [bcol,edge] (m1) -- (t1);
+      \draw [bcol,edge] (m1) -- (t2);
+      
+      \draw [bcol,edge] (m2) -- (t1);
+      \draw [bcol,edge] (m2) -- (t2);
+      
+      \draw [bcol,edge] (m3) -- (t3);
+      \draw [bcol,edge] (m3) -- (t4);
+      \draw [bcol,edge] (m3) -- (t5);
+      
+      \draw [bcol,edge] (m4) -- (t4);
+      \draw [bcol,edge] (m4) -- (t5);
+      
+      \draw [bcol,edge] (m5) -- (t4);
+      \draw [bcol,edge] (m5) -- (t5);
+      
+      \node [annot] at (1.5, -8) {\rlap{$\posof M$}};
+      
+      \node [annot] at (-14.5, 0) {\rlap{$\posof\!D$}};
+      \node [annot] at (-6.5, 0) {\rlap{$\posof\!D$}};
+      \node [annot] at (1.5, 0) {\rlap{$\posof\!D$}};
+      \node [annot] at (9.5, 0) {\rlap{$\posof\!D$}};
+      \node [annot] at (17.5, 0) {\rlap{$\posof\!D$}};
+    \end{tikzpicture}
+  \end{center}
 
+  \begin{center}
+    \begin{tikzpicture}
+      \node [ycol,vertex,large] (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+      \draw [ycol,edge] (s) -- (t1);
+      \draw [ycol,edge] (s) -- (t2);
+      \draw [ycol,edge] (s) -- (t3);
+      \draw [ycol,edge] (s) -- (t4);
+      \draw [ycol,edge] (s) -- (t5);
+      
+      \node at (0, -13) {$\id_M$};
+    \end{tikzpicture}
+    $\canoniso$
+    \quad
+    \begin{tikzpicture}
+      \node [ycol,vertex] (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+
+      \coordinate (m1) at (-16,0) {};
+      \coordinate (m2) at (-8,0) {};
+      \coordinate (m3) at (0,0) {};
+      \coordinate (m4) at (8,0) {};
+      \coordinate (m5) at (16,0) {};
+      
+      \draw [ycol,edge] (s) -- (m1);
+      \draw [ycol,edge] (s) -- (m2);
+      \draw [ycol,edge] (s) -- (m3);
+      \draw [ycol,edge] (s) -- (m4);
+      \draw [ycol,edge] (s) -- (m5);
+      
+      \draw [edge] (m1) -- (t1);
+      \draw [dash] (m1) -- (t2);
+      
+      \draw [dash] (m2) -- (t1);
+      \draw [edge] (m2) -- (t2);
+      
+      \draw [edge] (m3) -- (t3);
+      \draw [dash] (m3) -- (t4);
+      \draw [dash] (m3) -- (t5);
+      
+      \draw [edge] (m4) -- (t4);
+      \draw [dash] (m4) -- (t5);
+      
+      \draw [dash] (m5) -- (t4);
+      \draw [edge] (m5) -- (t5);
+      
+      \node at (0, -13) {$(\id_M \sub \varepsilon) \circ \rho$};
+    \end{tikzpicture}
+  \end{center}
+
+
+  \begin{center}
+    \begin{tikzpicture}
+      \node [ycol,vertex,small] (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (-0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+      
+      \node [bcol,vertex,small] (m1) at (-16,-4) {};
+      \node [bcol,vertex,small] (m2) at (-8,-4) {};
+      \node [bcol,vertex,small] (m3) at (0,-4) {};
+      \node [bcol,vertex,small] (m4) at (8,-4) {};
+      \node [bcol,vertex,small] (m5) at (16,-4) {};
+      
+      \node [bcol,vertex] (m1_) at (-16,0) {};
+      \node [bcol,vertex] (m2_) at (-8,0) {};
+      \node [bcol,vertex] (m3_) at (0,0) {};
+      \node [bcol,vertex] (m4_) at (8,0) {};
+      \node [bcol,vertex] (m5_) at (16,0) {};
+      
+      \draw [ycol,edge] (s) -- (m1);
+      \draw [ycol,edge] (s) -- (m2);
+      \draw [ycol,edge] (s) -- (m3);
+      \draw [ycol,edge] (s) -- (m4);
+      \draw [ycol,edge] (s) -- (m5);
+      
+      \draw [bcol,edge] (m1) -- (m1_);
+      \draw [bcol,edge] (m1) -- (m2_);
+      
+      \draw [bcol,edge] (m2) -- (m1_);
+      \draw [bcol,edge] (m2) -- (m2_);
+      
+      \draw [bcol,edge] (m3) -- (m3_);
+      \draw [bcol,edge] (m3) -- (m4_);
+      \draw [bcol,edge] (m3) -- (m5_);
+      
+      \draw [bcol,edge] (m4) -- (m4_);
+      \draw [bcol,edge] (m4) -- (m5_);
+      
+      \draw [bcol,edge] (m5) -- (m4_);
+      \draw [bcol,edge] (m5) -- (m5_);
+      
+      \draw [bcol,edge] (m1_) -- (t1);
+      \draw [bcol,edge] (m1_) -- (t2);
+      
+      \draw [bcol,edge] (m2_) -- (t1);
+      \draw [bcol,edge] (m2_) -- (t2);
+      
+      \draw [bcol,edge] (m3_) -- (t3);
+      \draw [bcol,edge] (m3_) -- (t4);
+      \draw [bcol,edge] (m3_) -- (t5);
+      
+      \draw [bcol,edge] (m4_) -- (t4);
+      \draw [bcol,edge] (m4_) -- (t5);
+      
+      \draw [bcol,edge] (m5_) -- (t4);
+      \draw [bcol,edge] (m5_) -- (t5);
+
+      
+      \node at (0, -13) {$(\rho \sub \id_D) \circ \rho$};
+    \end{tikzpicture}
+    \quad
+    $\canoniso$
+    \quad
+    \begin{tikzpicture}
+      \node [ycol,vertex] (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (-0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+      
+      \node [bcol,vertex,small] (m1) at (-16,0) {};
+      \node [bcol,vertex,small] (m2) at (-8,0) {};
+      \node [bcol,vertex,small] (m3) at (0,0) {};
+      \node [bcol,vertex,small] (m4) at (8,0) {};
+      \node [bcol,vertex,small] (m5) at (16,0) {};
+      
+      \node [bcol,vertex,small] (m11) at (-18,4) {};
+      \node [bcol,vertex,small] (m12) at (-14,4) {};
+      \node [bcol,vertex,small] (m21) at (-10,4) {};
+      \node [bcol,vertex,small] (m22) at (-6,4) {};
+      \node [bcol,vertex,small] (m31) at (-3,4) {};
+      \node [bcol,vertex,small] (m32) at (0,4) {};
+      \node [bcol,vertex,small] (m33) at (3,4) {};
+      \node [bcol,vertex,small] (m41) at (6,4) {};
+      \node [bcol,vertex,small] (m42) at (10,4) {};
+      \node [bcol,vertex,small] (m51) at (14,4) {};
+      \node [bcol,vertex,small] (m52) at (18,4) {};
+      
+      \draw [ycol,edge] (s) -- (m1);
+      \draw [ycol,edge] (s) -- (m2);
+      \draw [ycol,edge] (s) -- (m3);
+      \draw [ycol,edge] (s) -- (m4);
+      \draw [ycol,edge] (s) -- (m5);
+      
+      
+      \draw [bcol,edge] (m1) -- (m11);
+      \draw [bcol,edge] (m1) -- (m12);
+      
+      \draw [bcol,edge] (m2) -- (m21);
+      \draw [bcol,edge] (m2) -- (m22);
+      
+      \draw [bcol,edge] (m3) -- (m31);
+      \draw [bcol,edge] (m3) -- (m32);
+      \draw [bcol,edge] (m3) -- (m33);
+      
+      \draw [bcol,edge] (m4) -- (m41);
+      \draw [bcol,edge] (m4) -- (m42);
+      
+      \draw [bcol,edge] (m5) -- (m51);
+      \draw [bcol,edge] (m5) -- (m52);
+
+      
+      \draw [bcol,edge] (m11) -- (t1);
+      \draw [bcol,edge] (m11) -- (t2);
+      
+      \draw [bcol,edge] (m12) -- (t1);
+      \draw [bcol,edge] (m12) -- (t2);
+      
+      \draw [bcol,edge] (m21) -- (t1);
+      \draw [bcol,edge] (m21) -- (t2);
+      
+      \draw [bcol,edge] (m22) -- (t1);
+      \draw [bcol,edge] (m22) -- (t2);
+      
+      \draw [bcol,edge] (m31) -- (t3);
+      \draw [bcol,edge] (m31) -- (t4);
+      \draw [bcol,edge] (m31) -- (t5);
+      
+      \draw [bcol,edge] (m32) -- (t4);
+      \draw [bcol,edge] (m32) -- (t5);
+      
+      \draw [bcol,edge] (m33) -- (t4);
+      \draw [bcol,edge] (m33) -- (t5);
+      
+      \draw [bcol,edge] (m41) -- (t4);
+      \draw [bcol,edge] (m41) -- (t5);
+      
+      \draw [bcol,edge] (m42) -- (t4);
+      \draw [bcol,edge] (m42) -- (t5);
+      
+      \draw [bcol,edge] (m51) -- (t4);
+      \draw [bcol,edge] (m51) -- (t5);
+      
+      \draw [bcol,edge] (m52) -- (t4);
+      \draw [bcol,edge] (m52) -- (t5);
+
+      
+      \node at (0, -13) {$(\id_M \sub \delta) \circ \rho$};
+    \end{tikzpicture}
+  \end{center}
+  
 \end{proof}
 
 \begin{prop}
@@ -593,6 +1032,164 @@ and categories are inverse by construction.
   Maps between bicomodules are natural transformations between prafunctors.
 \end{prop}
 \begin{proof}
+
+  
+  \begin{center}
+    \begin{tikzpicture}
+      \node [rcol,vertex,small] (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (-0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+      
+      \node [bcol,vertex] (m1_) at (-16,0) {};
+      \node [bcol,vertex] (m2_) at (-8,0) {};
+      \node [bcol,vertex] (m3_) at (0,0) {};
+      \node [bcol,vertex] (m4_) at (8,0) {};
+      \node [bcol,vertex] (m5_) at (16,0) {};
+
+      \node [ycol,vertex,small] (m1) at (-15,-4) {};
+      \node [ycol,vertex,small] (m2) at (-5,-4) {};
+      \node [ycol,vertex,small] (m3) at (5,-4) {};
+      \node [ycol,vertex,small] (m4) at (15,-4) {};
+      
+      \draw [ycol,edge] (m2) -- (m1_);
+      \draw [ycol,edge] (m2) -- (m2_);
+      \draw [ycol,edge] (m2) -- (m3_);
+      \draw [ycol,edge] (m2) -- (m4_);
+      \draw [ycol,edge] (m2) -- (m5_);
+      
+      \draw [ycol,edge,bend left=13] (m3) to (m3_);
+      \draw [ycol,edge,bend right=13] (m3) to (m3_);
+      \draw [ycol,edge,bend left=13] (m3) to (m4_);
+      \draw [ycol,edge,bend right=13] (m3) to (m4_);
+      \draw [ycol,edge,bend left=8] (m3) to (m5_);
+      \draw [ycol,edge,bend right=8] (m3) to (m5_);
+      
+      \draw [ycol,edge] (m4) -- (m4_);
+      \draw [ycol,edge] (m4) -- (m5_);
+      
+
+      \draw [rcol,edge] (s) -- (m1);
+      \draw [rcol,edge] (s) -- (m2);
+      \draw [rcol,edge] (s) -- (m3);
+      \draw [rcol,edge] (s) -- (m4);
+      
+      \draw [bcol,edge] (m1_) -- (t1);
+      \draw [bcol,edge] (m1_) -- (t2);
+      
+      \draw [bcol,edge] (m2_) -- (t1);
+      \draw [bcol,edge] (m2_) -- (t2);
+      
+      \draw [bcol,edge] (m3_) -- (t3);
+      \draw [bcol,edge] (m3_) -- (t4);
+      \draw [bcol,edge] (m3_) -- (t5);
+      
+      \draw [bcol,edge] (m4_) -- (t4);
+      \draw [bcol,edge] (m4_) -- (t5);
+      
+      \draw [bcol,edge] (m5_) -- (t4);
+      \draw [bcol,edge] (m5_) -- (t5);
+
+      
+      \node at (0, -13) {$(\lambda \sub \id_D) \circ \rho$};
+    \end{tikzpicture}
+    \quad
+    $\canoniso$
+    \quad
+    \begin{tikzpicture}
+      \node [rcol,vertex] (s) at (0, -8) {};
+      \coordinate (t1) at (-12,8) {};
+      \coordinate (t2) at (-6,8) {};
+      \coordinate (t3) at (0,8) {};
+      \coordinate (t4) at (6,8) {};
+      \coordinate (t5) at (12,8) {};
+      
+      \node [ycol,vertex,small] (m1) at (-15,0) {};
+      \node [ycol,vertex,small] (m2) at (-5,0) {};
+      \node [ycol,vertex,small] (m3) at (5,0) {};
+      \node [ycol,vertex,small] (m4) at (15,0) {};
+      
+      \node [bcol,vertex,small] (m21) at (-8.75,4) {};
+      \node [bcol,vertex,small] (m22) at (-6.75,4) {};
+      \node [bcol,vertex,small] (m23) at (-5,4) {};
+      \node [bcol,vertex,small] (m24) at (-3.25,4) {};
+      \node [bcol,vertex,small] (m25) at (-1.25,4) {};
+      \node [bcol,vertex,small] (m31) at (1.25,4) {};
+      \node [bcol,vertex,small] (m32) at (2.75,4) {};
+      \node [bcol,vertex,small] (m33) at (4.25,4) {};
+      \node [bcol,vertex,small] (m34) at (5.75,4) {};
+      \node [bcol,vertex,small] (m35) at (7.25,4) {};
+      \node [bcol,vertex,small] (m36) at (8.75,4) {};
+      \node [bcol,vertex,small] (m41) at (13,4) {};
+      \node [bcol,vertex,small] (m42) at (17,4) {};
+      
+      \draw [rcol,edge] (s) -- (m1);
+      \draw [rcol,edge] (s) -- (m2);
+      \draw [rcol,edge] (s) -- (m3);
+      \draw [rcol,edge] (s) -- (m4);
+
+      \draw [ycol,edge] (m2) -- (m21);
+      \draw [ycol,edge] (m2) -- (m22);
+      \draw [ycol,edge] (m2) -- (m23);
+      \draw [ycol,edge] (m2) -- (m24);
+      \draw [ycol,edge] (m2) -- (m25);
+      \draw [ycol,edge] (m3) -- (m31);
+      \draw [ycol,edge] (m3) -- (m32);
+      \draw [ycol,edge] (m3) -- (m33);
+      \draw [ycol,edge] (m3) -- (m34);
+      \draw [ycol,edge] (m3) -- (m35);
+      \draw [ycol,edge] (m3) -- (m36);
+      \draw [ycol,edge] (m4) -- (m41);
+      \draw [ycol,edge] (m4) -- (m42);
+      
+      
+      \draw [bcol,edge] (m21) -- (t1);
+      \draw [bcol,edge] (m21) -- (t2);
+      
+      \draw [bcol,edge] (m22) -- (t1);
+      \draw [bcol,edge] (m22) -- (t2);
+      
+      \draw [bcol,edge] (m23) -- (t3);
+      \draw [bcol,edge] (m23) -- (t4);
+      \draw [bcol,edge] (m23) -- (t5);
+      
+      \draw [bcol,edge] (m24) -- (t4);
+      \draw [bcol,edge] (m24) -- (t5);
+      
+      \draw [bcol,edge] (m25) -- (t4);
+      \draw [bcol,edge] (m25) -- (t5);
+
+      \draw [bcol,edge] (m31) -- (t3);
+      \draw [bcol,edge] (m31) -- (t4);
+      \draw [bcol,edge] (m31) -- (t5);
+
+      \draw [bcol,edge] (m32) -- (t3);
+      \draw [bcol,edge] (m32) -- (t4);
+      \draw [bcol,edge] (m32) -- (t5);
+
+      \draw [bcol,edge] (m33) -- (t4);
+      \draw [bcol,edge] (m33) -- (t5);
+
+      \draw [bcol,edge] (m34) -- (t4);
+      \draw [bcol,edge] (m34) -- (t5);
+
+      \draw [bcol,edge] (m35) -- (t4);
+      \draw [bcol,edge] (m35) -- (t5);
+
+      \draw [bcol,edge] (m36) -- (t4);
+      \draw [bcol,edge] (m36) -- (t5);
+
+      \draw [bcol,edge] (m41) -- (t4);
+      \draw [bcol,edge] (m41) -- (t5);
+      \draw [bcol,edge] (m42) -- (t4);
+      \draw [bcol,edge] (m42) -- (t5);
+      
+      \node at (0, -13) {$(\id_C \sub \rho) \circ \lambda$};
+    \end{tikzpicture}
+  \end{center}
+
   
 \end{proof}
 
@@ -600,14 +1197,14 @@ and categories are inverse by construction.
   Composition of bicomodules is composition of prafunctors.
 \end{prop}
 \begin{proof}
-  Recall bicomodules from $d$ to $0$ are copresheaves on $d$ (and maps
+  Recall bicomodules from $D$ to $0$ are copresheaves on $D$ (and maps
   between such bicomodules are copresheaf maps). Hence each bicomodule
-  $m$ from $c$ to $d$ induces a functor $F_m$ from $d$-copresheaves to
-  $c$-copresheaves by precomposition. Accordingly, we have
-  $F_{m \sub_d n} \cong F_m \circ F_n$ (for bicomodules $m$
-  from $c$ to $d$ and $n$ from $d$ to $e$).
+  $M$ from $D$ to $D$ induces a functor $F_M$ from $D$-copresheaves to
+  $C$-copresheaves by precomposition. Accordingly, we have
+  $F_{M \sub_D N} \cong F_M \circ F_N$ (for bicomodules $M$
+  from $C$ to $D$ and $N$ from $D$ to $E$).
   
-  We show that the prafunctor corresponding to the bimodule $m$ is $F_m$. 
+  We show that the prafunctor corresponding to the bimodule $M$ is $F_M$. 
 \end{proof}
 
 \end{document}
