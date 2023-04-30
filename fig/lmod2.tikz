@@ -1,0 +1,39 @@
+\begin{tikzpicture}
+\node [rcol,vertex] (s) at (0, -8) {};
+\coordinate (t1) at (-12,8) {};
+\coordinate (t2) at (-6,8) {};
+\coordinate (t3) at (0,8) {};
+\coordinate (t4) at (6,8) {};
+\coordinate (t5) at (12,8) {};
+\node [ycol,vertex] (m1) at (-15,0) {};
+\node [ycol,vertex] (m2) at (-5,0) {};
+\node [ycol,vertex] (m3) at (5,0) {};
+\node [ycol,vertex] (m4) at (15,0) {};
+\draw [rcol,edge] (s) -- (m1);
+\draw [rcol,edge] (s) -- (m2);
+\draw [rcol,edge] (s) -- (m3);
+\draw [rcol,edge] (s) -- (m4);
+
+\draw [ycol,edge] (m2) -- (t1);
+\draw [ycol,edge] (m2) -- (t2);
+\draw [ycol,edge] (m2) -- (t3);
+\draw [ycol,edge] (m2) -- (t4);
+\draw [ycol,edge] (m2) -- (t5);
+
+\draw [ycol,edge,bend left=11] (m3) to (t3);
+\draw [ycol,edge,bend right=11] (m3) to (t3);
+\draw [ycol,edge,bend left=11] (m3) to (t4);
+\draw [ycol,edge,bend right=11] (m3) to (t4);
+\draw [ycol,edge,bend left=11] (m3) to (t5);
+\draw [ycol,edge,bend right=11] (m3) to (t5);
+
+\draw [ycol,edge] (m4) -- (t4);
+\draw [ycol,edge] (m4) -- (t5);
+
+\node [annot] at (1.5, -8) {\rlap{$\posof C$}};
+
+\node [annot] at (-13, 0) {\rlap{$\posof\!M$}};
+\node [annot] at (-3, 0) {\rlap{$\posof\!M$}};
+\node [annot] at (7, 0) {\rlap{$\posof\!M$}};
+\node [annot] at (17, 0) {\rlap{$\posof\!M$}};
+\end{tikzpicture}

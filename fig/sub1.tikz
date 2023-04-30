@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+\node [rcol,vertex,huge] (s) at (0, -12) {\scriptsize$a_{\shrink{\base}}$};
+\node [bcol,vertex,huge] (m1) at (-13.5,3) {};
+\node [bcol,vertex,huge] (m2) at (0,3) {};
+\node [bcol,vertex,huge] (m3) at (13.5,3) {\scriptsize$a_f$};
+\coordinate (t11) at (-22.25,15.5) {};
+\coordinate (t12) at (-13.5,15.5) {};
+\coordinate (t13) at (-4.75,15.5) {};
+\coordinate (t21) at (0,15.5) {};
+\coordinate (t31) at (7.25,15.5) {};
+\coordinate (t32) at (19.75,15.5) {};
+\draw [rcol,edge] (s) -- (m1);
+\draw [rcol,edge] (s) -- (m2);
+\draw [rcol,edge] (s) -- node [label] {$f$} (m3);
+\draw [bcol,edge] (m1) -- (t11);
+\draw [bcol,edge] (m1) -- (t12);
+\draw [bcol,edge] (m1) -- (t13);
+\draw [bcol,edge] (m2) -- (t21);
+\draw [bcol,edge] (m3) -- (t31);
+\draw [bcol,edge] (m3) -- node [label] {$g$} (t32);
+
+\node [annot] at (4.5, -12) {\rlap{$\posof P$}};
+
+\node [annot] at (-9, 3) {\rlap{$\posof\!Q$}};
+\node [annot] at (4.5, 3) {\rlap{$\posof\!Q$}};
+\node [annot] at (18, 3) {\rlap{$\posof\!Q$}};
+\end{tikzpicture}

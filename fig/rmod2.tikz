@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+\node [ycol,vertex] (s) at (0, -8) {};
+\coordinate (t1) at (-12,8) {};
+\coordinate (t2) at (-6,8) {};
+\coordinate (t3) at (-0,8) {};
+\coordinate (t4) at (6,8) {};
+\coordinate (t5) at (12,8) {};
+\node [bcol,vertex] (m1) at (-16,0) {};
+\node [bcol,vertex] (m2) at (-8,0) {};
+\node [bcol,vertex] (m3) at (0,0) {};
+\node [bcol,vertex] (m4) at (8,0) {};
+\node [bcol,vertex] (m5) at (16,0) {};
+\draw [ycol,edge] (s) -- (m1);
+\draw [ycol,edge] (s) -- (m2);
+\draw [ycol,edge] (s) -- (m3);
+\draw [ycol,edge] (s) -- (m4);
+\draw [ycol,edge] (s) -- (m5);
+
+\draw [bcol,edge] (m1) -- (t1);
+\draw [bcol,edge] (m1) -- (t2);
+
+\draw [bcol,edge] (m2) -- (t1);
+\draw [bcol,edge] (m2) -- (t2);
+
+\draw [bcol,edge] (m3) -- (t3);
+\draw [bcol,edge] (m3) -- (t4);
+\draw [bcol,edge] (m3) -- (t5);
+
+\draw [bcol,edge] (m4) -- (t4);
+\draw [bcol,edge] (m4) -- (t5);
+
+\draw [bcol,edge] (m5) -- (t4);
+\draw [bcol,edge] (m5) -- (t5);
+
+\node [annot] at (1.5, -8) {\rlap{$\posof M$}};
+
+\node [annot] at (-14.5, 0) {\rlap{$\posof\!D$}};
+\node [annot] at (-6.5, 0) {\rlap{$\posof\!D$}};
+\node [annot] at (1.5, 0) {\rlap{$\posof\!D$}};
+\node [annot] at (9.5, 0) {\rlap{$\posof\!D$}};
+\node [annot] at (17.5, 0) {\rlap{$\posof\!D$}};
+\end{tikzpicture}

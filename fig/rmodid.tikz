@@ -1,0 +1,38 @@
+\begin{tikzpicture}
+\node [ycol,vertex] (s) at (0, -8) {};
+\coordinate (t1) at (-12,8) {};
+\coordinate (t2) at (-6,8) {};
+\coordinate (t3) at (0,8) {};
+\coordinate (t4) at (6,8) {};
+\coordinate (t5) at (12,8) {};
+
+\coordinate (m1) at (-16,0) {};
+\coordinate (m2) at (-8,0) {};
+\coordinate (m3) at (0,0) {};
+\coordinate (m4) at (8,0) {};
+\coordinate (m5) at (16,0) {};
+
+\draw [ycol,edge] (s) -- (m1);
+\draw [ycol,edge] (s) -- (m2);
+\draw [ycol,edge] (s) -- (m3);
+\draw [ycol,edge] (s) -- (m4);
+\draw [ycol,edge] (s) -- (m5);
+
+\draw [edge] (m1) -- (t1);
+\draw [dash] (m1) -- (t2);
+
+\draw [dash] (m2) -- (t1);
+\draw [edge] (m2) -- (t2);
+
+\draw [edge] (m3) -- (t3);
+\draw [dash] (m3) -- (t4);
+\draw [dash] (m3) -- (t5);
+
+\draw [edge] (m4) -- (t4);
+\draw [dash] (m4) -- (t5);
+
+\draw [dash] (m5) -- (t4);
+\draw [edge] (m5) -- (t5);
+
+\node at (0, -13) {$\rho \fatsemi (\id_M \sub \varepsilon)$};
+\end{tikzpicture}

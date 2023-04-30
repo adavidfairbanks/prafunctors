@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\coordinate (s) at (0, -9.5) {};
+\coordinate (t1) at (-9,8) {};
+\coordinate (t2) at (-3,8) {};
+\coordinate (t3) at (3,8) {};
+\coordinate (t4) at (9,8) {};
+\draw [dash] (s) -- (t1);
+\draw [edge] (s) -- node [label] {\scriptsize$\idsubd$} (t2);
+\draw [dash] (s) -- (t3);
+\draw [dash] (s) -- (t4);
+\end{tikzpicture}

@@ -1,0 +1,65 @@
+\begin{tikzpicture}
+\node [rcol,vertex,small] (s) at (0, -8) {};
+\coordinate (t1) at (-12,8) {};
+\coordinate (t2) at (-6,8) {};
+\coordinate (t3) at (0,8) {};
+\coordinate (t4) at (6,8) {};
+\coordinate (t5) at (12,8) {};
+
+
+\node [rcol,vertex,small] (m1_) at (-15,-4) {};
+\node [rcol,vertex,small] (m2_) at (-5,-4) {};
+\node [rcol,vertex,small] (m3_) at (5,-4) {};
+\node [rcol,vertex,small] (m4_) at (15,-4) {};
+
+\node [ycol,vertex] (m1) at (-15,0) {};
+\node [ycol,vertex] (m2) at (-5,0) {};
+\node [ycol,vertex] (m3) at (5,0) {};
+\node [ycol,vertex] (m4) at (15,0) {};
+
+\draw [rcol,edge] (s) -- (m1_);
+\draw [rcol,edge] (s) -- (m2_);
+\draw [rcol,edge] (s) -- (m3_);
+\draw [rcol,edge] (s) -- (m4_);
+
+\draw [rcol,edge] (m1_) -- (m1);
+\draw [rcol,edge,bend left=32] (m1_) to (m1);
+\draw [rcol,edge,bend right=32] (m1_) to (m1);
+
+\draw [rcol,edge] (m2_) -- (m1);
+\draw [rcol,edge] (m2_) -- (m2);
+\draw [rcol,edge] (m2_) -- (m3);
+\draw [rcol,edge] (m2_) -- (m4);
+
+\draw [rcol,edge] (m3_) -- (m1);
+\draw [rcol,edge] (m3_) -- (m3);
+\draw [rcol,edge,bend left=10] (m3_) to (m4);
+\draw [rcol,edge,bend right=10] (m3_) to (m4);
+
+\draw [rcol,edge] (m4_) -- (m4);
+
+
+\draw [rcol,edge] (s) -- (m1);
+\draw [rcol,edge] (s) -- (m2);
+\draw [rcol,edge] (s) -- (m3);
+\draw [rcol,edge] (s) -- (m4);
+
+\draw [ycol,edge] (m2) -- (t1);
+\draw [ycol,edge] (m2) -- (t2);
+\draw [ycol,edge] (m2) -- (t3);
+\draw [ycol,edge] (m2) -- (t4);
+\draw [ycol,edge] (m2) -- (t5);
+
+\draw [ycol,edge,bend left=11] (m3) to (t3);
+\draw [ycol,edge,bend right=11] (m3) to (t3);
+\draw [ycol,edge,bend left=11] (m3) to (t4);
+\draw [ycol,edge,bend right=11] (m3) to (t4);
+\draw [ycol,edge,bend left=11] (m3) to (t5);
+\draw [ycol,edge,bend right=11] (m3) to (t5);
+
+\draw [ycol,edge] (m4) -- (t4);
+\draw [ycol,edge] (m4) -- (t5);
+
+
+\node at (0, -13) {$\lambda \fatsemi (\delta \sub \id_M)$};
+\end{tikzpicture}

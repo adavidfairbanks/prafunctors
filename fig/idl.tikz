@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+\coordinate (s) at (0, -8) {};
+\coordinate (t1) at (-9,8) {};
+\coordinate (t2) at (-3,8) {};
+\coordinate (t3) at (3,8) {};
+\coordinate (t4) at (9,8) {};
+\node [rcol,vertex,transparent] (m1) at (-12,0) {};
+\node [rcol,vertex] (m2) at (-4,0) {};
+\node [rcol,vertex,transparent] (m3) at (4,0) {};
+\node [rcol,vertex,transparent] (m4) at (12,0) {};
+\draw [dash] (s) -- (m1);
+\draw [edge] (s) -- (m2);
+\draw [dash] (s) -- (m3);
+\draw [dash] (s) -- (m4);
+
+\draw [rcol,edge,transparent] (m1) -- (t1);
+\draw [rcol,edge,bend left=22,transparent] (m1) to (t1);
+\draw [rcol,edge,bend right=22,transparent] (m1) to (t1);
+
+\draw [rcol,edge] (m2) -- (t1);
+\draw [rcol,edge] (m2) -- (t2);
+\draw [rcol,edge] (m2) -- (t3);
+\draw [rcol,edge] (m2) -- (t4);
+
+\draw [rcol,edge,transparent] (m3) -- (t1);
+\draw [rcol,edge,transparent] (m3) -- (t3);
+\draw [rcol,edge,bend left=10,transparent] (m3) to (t4);
+\draw [rcol,edge,bend right=10,transparent] (m3) to (t4);
+
+\draw [rcol,edge,transparent] (m4) -- (t4);
+
+\node at (0, -13) {$\delta \fatsemi (\varepsilon \sub \id_C)$};
+\end{tikzpicture}

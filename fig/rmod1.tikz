@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\node [ycol,vertex,large] (s) at (0, -8) {};
+\coordinate (t1) at (-12,8) {};
+\coordinate (t2) at (-6,8) {};
+\coordinate (t3) at (0,8) {};
+\coordinate (t4) at (6,8) {};
+\coordinate (t5) at (12,8) {};
+\draw [ycol,edge] (s) -- (t1);
+\draw [ycol,edge] (s) -- (t2);
+\draw [ycol,edge] (s) -- (t3);
+\draw [ycol,edge] (s) -- (t4);
+\draw [ycol,edge] (s) -- (t5);
+\node [annot] at (3, -8) {\rlap{$\posof M$}};
+\end{tikzpicture}

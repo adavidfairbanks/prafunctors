@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\node [vertex,huger] (s) at (0, -12) {$a$};
+\coordinate (t11) at (-22.5,15.5) {};
+\coordinate (t12) at (-13.5,15.5) {};
+\coordinate (t13) at (-4.5,15.5) {};
+\coordinate (t21) at (4.5,15.5) {};
+\coordinate (t31) at (13.5,15.5) {};
+\coordinate (t32) at (22.5,15.5) {};
+\draw [edge] (s) -- (t11);
+\draw [edge] (s) -- (t12);
+\draw [edge] (s) -- (t13);
+\draw [edge] (s) -- (t21);
+\draw [edge] (s) -- (t31);
+\draw [edge] (s) -- node [label] {$f \subd g$} (t32);
+
+\node [annot] at (6, -12) {\rlap{$\posof P \sub Q$}};
+\end{tikzpicture}

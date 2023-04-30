@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+\node [rcol,vertex,small] (s) at (0, -8) {};
+\coordinate (t1) at (-12,8) {};
+\coordinate (t2) at (-6,8) {};
+\coordinate (t3) at (-0,8) {};
+\coordinate (t4) at (6,8) {};
+\coordinate (t5) at (12,8) {};
+
+\node [bcol,vertex] (m1_) at (-16,0) {};
+\node [bcol,vertex] (m2_) at (-8,0) {};
+\node [bcol,vertex] (m3_) at (0,0) {};
+\node [bcol,vertex] (m4_) at (8,0) {};
+\node [bcol,vertex] (m5_) at (16,0) {};
+
+\node [ycol,vertex,small] (m1) at (-15,-4) {};
+\node [ycol,vertex,small] (m2) at (-5,-4) {};
+\node [ycol,vertex,small] (m3) at (5,-4) {};
+\node [ycol,vertex,small] (m4) at (15,-4) {};
+
+\draw [ycol,edge] (m2) -- (m1_);
+\draw [ycol,edge] (m2) -- (m2_);
+\draw [ycol,edge] (m2) -- (m3_);
+\draw [ycol,edge] (m2) -- (m4_);
+\draw [ycol,edge] (m2) -- (m5_);
+
+\draw [ycol,edge,bend left=13] (m3) to (m3_);
+\draw [ycol,edge,bend right=13] (m3) to (m3_);
+\draw [ycol,edge,bend left=13] (m3) to (m4_);
+\draw [ycol,edge,bend right=13] (m3) to (m4_);
+\draw [ycol,edge,bend left=8] (m3) to (m5_);
+\draw [ycol,edge,bend right=8] (m3) to (m5_);
+
+\draw [ycol,edge] (m4) -- (m4_);
+\draw [ycol,edge] (m4) -- (m5_);
+
+
+\draw [rcol,edge] (s) -- (m1);
+\draw [rcol,edge] (s) -- (m2);
+\draw [rcol,edge] (s) -- (m3);
+\draw [rcol,edge] (s) -- (m4);
+
+\draw [bcol,edge] (m1_) -- (t1);
+\draw [bcol,edge] (m1_) -- (t2);
+
+\draw [bcol,edge] (m2_) -- (t1);
+\draw [bcol,edge] (m2_) -- (t2);
+
+\draw [bcol,edge] (m3_) -- (t3);
+\draw [bcol,edge] (m3_) -- (t4);
+\draw [bcol,edge] (m3_) -- (t5);
+
+\draw [bcol,edge] (m4_) -- (t4);
+\draw [bcol,edge] (m4_) -- (t5);
+
+\draw [bcol,edge] (m5_) -- (t4);
+\draw [bcol,edge] (m5_) -- (t5);
+
+
+\node at (0, -13) {$\rho \fatsemi (\lambda \sub \id_D)$};
+\end{tikzpicture}

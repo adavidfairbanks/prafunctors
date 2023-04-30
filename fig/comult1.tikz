@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\node [rcol,vertex,large] (s) at (0, -8) {};
+\coordinate (t1) at (-9,8) {};
+\coordinate (t2) at (-3,8) {};
+\coordinate (t3) at (3,8) {};
+\coordinate (t4) at (9,8) {};
+\draw [rcol,edge] (s) -- (t1);
+\draw [rcol,edge] (s) -- (t2);
+\draw [rcol,edge] (s) -- (t3);
+\draw [rcol,edge] (s) -- (t4);
+\node [annot] at (3, -8) {\rlap{$\posof C$}};
+\end{tikzpicture}

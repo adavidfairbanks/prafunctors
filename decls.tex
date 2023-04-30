@@ -1,8 +1,10 @@
-\usepackage{amsmath,amssymb,stmaryrd,tikz}
+\usepackage{amsmath,amssymb,stmaryrd,pxfonts,lmodern,tikz}
+\usetikzlibrary{external}
 
 \newtheorem{prop}{Proposition}
 
 \newcommand{\id}{\mathrm{id}}
+\newcommand{\op}{\mathrm{op}}
 \newcommand{\Ob}{\operatorname{Ob}}
 \newcommand{\Arr}{\operatorname{Arr}}
 \newcommand{\transformto}{\to}
@@ -14,13 +16,18 @@
 \newcommand{\posof}{\in}
 \newcommand{\canoniso}{=}
 \newcommand{\backref}{\vcenter{\hbox{\larger[2]$\star$}}}
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\prof}{\multimapdotbothA}
 
 \newcommand{\bundle}[1]{\overset{#1}{\to}}
 \newcommand{\pos}[1]{#1(1)}
-\newcommand{\posmap}[1]{{#1}_1}
+\newcommand{\posmap}[2]{{#1}_1(#2)}
 % \newcommand{\dirmap}[3]{{#1}^\sharp(#2,#3)}
 \newcommand{\dirmap}[3]{{#1}^\sharp_{#2}(#3)}
 \newcommand{\shrink}[2][.65]{\scalebox{#1}{$#2$}}
+
+\newcommand{\catname}[1]{{\normalfont\mathbf{#1}}}
+\newcommand{\Set}{\catname{Set}}
 
 
 \definecolor{rcol}{RGB}{255,0,0}

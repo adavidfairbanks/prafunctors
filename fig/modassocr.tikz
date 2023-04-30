@@ -1,0 +1,90 @@
+\begin{tikzpicture}
+\node [rcol,vertex] (s) at (0, -8) {};
+\coordinate (t1) at (-12,8) {};
+\coordinate (t2) at (-6,8) {};
+\coordinate (t3) at (0,8) {};
+\coordinate (t4) at (6,8) {};
+\coordinate (t5) at (12,8) {};
+
+\node [ycol,vertex,small] (m1) at (-15,0) {};
+\node [ycol,vertex,small] (m2) at (-5,0) {};
+\node [ycol,vertex,small] (m3) at (5,0) {};
+\node [ycol,vertex,small] (m4) at (15,0) {};
+
+\node [bcol,vertex,small] (m21) at (-8.75,4) {};
+\node [bcol,vertex,small] (m22) at (-6.75,4) {};
+\node [bcol,vertex,small] (m23) at (-5,4) {};
+\node [bcol,vertex,small] (m24) at (-3.25,4) {};
+\node [bcol,vertex,small] (m25) at (-1.25,4) {};
+\node [bcol,vertex,small] (m31) at (1.25,4) {};
+\node [bcol,vertex,small] (m32) at (2.75,4) {};
+\node [bcol,vertex,small] (m33) at (4.25,4) {};
+\node [bcol,vertex,small] (m34) at (5.75,4) {};
+\node [bcol,vertex,small] (m35) at (7.25,4) {};
+\node [bcol,vertex,small] (m36) at (8.75,4) {};
+\node [bcol,vertex,small] (m41) at (13,4) {};
+\node [bcol,vertex,small] (m42) at (17,4) {};
+
+\draw [rcol,edge] (s) -- (m1);
+\draw [rcol,edge] (s) -- (m2);
+\draw [rcol,edge] (s) -- (m3);
+\draw [rcol,edge] (s) -- (m4);
+
+\draw [ycol,edge] (m2) -- (m21);
+\draw [ycol,edge] (m2) -- (m22);
+\draw [ycol,edge] (m2) -- (m23);
+\draw [ycol,edge] (m2) -- (m24);
+\draw [ycol,edge] (m2) -- (m25);
+\draw [ycol,edge] (m3) -- (m31);
+\draw [ycol,edge] (m3) -- (m32);
+\draw [ycol,edge] (m3) -- (m33);
+\draw [ycol,edge] (m3) -- (m34);
+\draw [ycol,edge] (m3) -- (m35);
+\draw [ycol,edge] (m3) -- (m36);
+\draw [ycol,edge] (m4) -- (m41);
+\draw [ycol,edge] (m4) -- (m42);
+
+
+\draw [bcol,edge] (m21) -- (t1);
+\draw [bcol,edge] (m21) -- (t2);
+
+\draw [bcol,edge] (m22) -- (t1);
+\draw [bcol,edge] (m22) -- (t2);
+
+\draw [bcol,edge] (m23) -- (t3);
+\draw [bcol,edge] (m23) -- (t4);
+\draw [bcol,edge] (m23) -- (t5);
+
+\draw [bcol,edge] (m24) -- (t4);
+\draw [bcol,edge] (m24) -- (t5);
+
+\draw [bcol,edge] (m25) -- (t4);
+\draw [bcol,edge] (m25) -- (t5);
+
+\draw [bcol,edge] (m31) -- (t3);
+\draw [bcol,edge] (m31) -- (t4);
+\draw [bcol,edge] (m31) -- (t5);
+
+\draw [bcol,edge] (m32) -- (t3);
+\draw [bcol,edge] (m32) -- (t4);
+\draw [bcol,edge] (m32) -- (t5);
+
+\draw [bcol,edge] (m33) -- (t4);
+\draw [bcol,edge] (m33) -- (t5);
+
+\draw [bcol,edge] (m34) -- (t4);
+\draw [bcol,edge] (m34) -- (t5);
+
+\draw [bcol,edge] (m35) -- (t4);
+\draw [bcol,edge] (m35) -- (t5);
+
+\draw [bcol,edge] (m36) -- (t4);
+\draw [bcol,edge] (m36) -- (t5);
+
+\draw [bcol,edge] (m41) -- (t4);
+\draw [bcol,edge] (m41) -- (t5);
+\draw [bcol,edge] (m42) -- (t4);
+\draw [bcol,edge] (m42) -- (t5);
+
+\node at (0, -13) {$\lambda \fatsemi (\id_C \sub \rho)$};
+\end{tikzpicture}

@@ -1,0 +1,88 @@
+\begin{tikzpicture}
+\node [rcol,vertex] (s) at (0, -8) {};
+\coordinate (t1) at (-9,8) {};
+\coordinate (t2) at (-3,8) {};
+\coordinate (t3) at (3,8) {};
+\coordinate (t4) at (9,8) {};
+
+\node [rcol,vertex,small] (m1) at (-12,0) {};
+\node [rcol,vertex,small] (m2) at (-4,0) {};
+\node [rcol,vertex,small] (m3) at (4,0) {};
+\node [rcol,vertex,small] (m4) at (12,0) {};
+\draw [rcol,edge] (s) -- (m1);
+\draw [rcol,edge] (s) -- (m2);
+\draw [rcol,edge] (s) -- (m3);
+\draw [rcol,edge] (s) -- (m4);
+
+\node [rcol,vertex,small] (m11) at (-14.5,4) {};
+\node [rcol,vertex,small] (m12) at (-12,4) {};
+\node [rcol,vertex,small] (m13) at (-9.5,4) {};
+\node [rcol,vertex,small] (m21) at (-7,4) {};
+\node [rcol,vertex,small] (m22) at (-5,4) {};
+\node [rcol,vertex,small] (m23) at (-3,4) {};
+\node [rcol,vertex,small] (m24) at (-1,4) {};
+\node [rcol,vertex,small] (m31) at (1,4) {};
+\node [rcol,vertex,small] (m32) at (3,4) {};
+\node [rcol,vertex,small] (m33) at (5,4) {};
+\node [rcol,vertex,small] (m34) at (7,4) {};
+\node [rcol,vertex,small] (m41) at (12,4) {};
+
+\draw [rcol,edge] (m1) -- (m11);
+\draw [rcol,edge] (m1) -- (m12);
+\draw [rcol,edge] (m1) -- (m13);
+\draw [rcol,edge] (m2) -- (m21);
+\draw [rcol,edge] (m2) -- (m22);
+\draw [rcol,edge] (m2) -- (m23);
+\draw [rcol,edge] (m2) -- (m24);
+\draw [rcol,edge] (m3) -- (m31);
+\draw [rcol,edge] (m3) -- (m32);
+\draw [rcol,edge] (m3) -- (m33);
+\draw [rcol,edge] (m3) -- (m34);
+\draw [rcol,edge] (m4) -- (m41);
+
+
+\draw [rcol,edge] (m11) -- (t1);
+\draw [rcol,edge,bend left=11] (m11) to (t1);
+\draw [rcol,edge,bend right=11] (m11) to (t1);
+
+\draw [rcol,edge] (m12) -- (t1);
+\draw [rcol,edge,bend left=11] (m12) to (t1);
+\draw [rcol,edge,bend right=11] (m12) to (t1);
+
+\draw [rcol,edge] (m13) -- (t1);
+\draw [rcol,edge,bend left=11] (m13) to (t1);
+\draw [rcol,edge,bend right=11] (m13) to (t1);
+
+
+\draw [rcol,edge] (m21) -- (t1);
+\draw [rcol,edge,bend left=11] (m21) to (t1);
+\draw [rcol,edge,bend right=11] (m21) to (t1);
+
+\draw [rcol,edge] (m22) -- (t1);
+\draw [rcol,edge] (m22) -- (t2);
+\draw [rcol,edge] (m22) -- (t3);
+\draw [rcol,edge] (m22) -- (t4);
+
+\draw [rcol,edge] (m23) -- (t1);
+\draw [rcol,edge] (m23) -- (t3);
+\draw [rcol,edge,bend left=5] (m23) to (t4);
+\draw [rcol,edge,bend right=5] (m23) to (t4);
+
+\draw [rcol,edge] (m24) -- (t4);
+
+
+\draw [rcol,edge] (m31) -- (t1);
+\draw [rcol,edge,bend left=11] (m31) to (t1);
+\draw [rcol,edge,bend right=11] (m31) to (t1);
+
+\draw [rcol,edge] (m32) -- (t3);
+
+\draw [rcol,edge] (m33) -- (t4);
+
+\draw [rcol,edge] (m34) -- (t4);
+
+
+\draw [rcol,edge] (m41) -- (t4);
+
+\node at (0, -13) {$\delta \fatsemi (\id_C \sub \delta)$};
+\end{tikzpicture}
