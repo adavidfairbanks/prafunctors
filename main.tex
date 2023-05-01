@@ -134,13 +134,13 @@ $\anydirmap{(\alpha \sub \beta)}{f \subd g} = \anydirmap{\alpha}{f}
   be $a_{f'}$.
 \fi
 
-\iffalse
-  Given a transformation $\alpha$, the map $\alpha_0$ is implicitly
-  determined by the domains of the $\alpha^\sharp$
+\iffalse Given a transformation $\alpha$, the map $\alpha_0$ is
+  implicitly determined by the domains of the $\alpha^\sharp$
   maps. Moreover, a position in a substitution product is determined
-  by the set of names of directions from it (at least, assuming
-  the positions in the factor polynomials have this property too), even though
-  distinct positions may share certain direction names.
+  by the set of names of directions from it (assuming the positions in
+  the factor polynomials have this property too --- which is not true
+  for polynomials featuring multiple constants), even though distinct
+  positions may share certain direction names.
 
   Hence an equation between horizontal ($\sub$) composites of transformations
   amounts to firstly an identification between domains of the composite
@@ -477,7 +477,7 @@ $\anydirmap{(\alpha \sub \beta)}{f \subd g} = \anydirmap{\alpha}{f}
   imposing the presheaf associativity law
   $m(m(f|_w, g|_x), z) = m(f|_w, m(g|_x, z))$ forces the copresheaf
   associativity law $m(m(w, f), g) = m(w, m(f, g))$ to hold for
-  $f$ and $g$ such that one of these expressions is defined for some
+  $f$ and $g$ such that one of the earlier expressions is defined for some
   $w$, $x$, $z$.\footnote{The expression
     $m(m(f|_w, g|_{m(w, f)}), z)$ is ``short'' for $m(m(f, g)_w, z)$,
     and if this is defined, then $m(w, m(f, g)) = s(z)$. Meanwhile, if
