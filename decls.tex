@@ -9,7 +9,6 @@
 \newcommand{\Arr}{\operatorname{Arr}}
 \newcommand{\prof}{\multimapdotbothA}
 \newcommand{\backref}{\vcenter{\hbox{\larger[2]$\star$}}}
-\newcommand{\place}{-}
 \newcommand{\base}{\mathrm{base}}
 \newcommand{\transformto}{\to}
 \newcommand{\canoniso}{=}
@@ -24,21 +23,21 @@
 \newcommand{\shrink}[2][.65]{\scalebox{#1}{$#2$}}
 \newcommand{\pos}[1]{#1(1)}
 \newcommand{\dir}[2]{#1[#2]}
-\newcommand{\posmap}[2]{{#1}_1(#2)}
-% \newcommand{\dirmap}[3]{{#1}^\sharp(#2,#3)}
-\newcommand{\dirmap}[3]{{#1}^\sharp_{#2}(#3)}
-% \newcommand{\anydirmap}[2]{\dirmap{#1}{\place}{#2}}
-\newcommand{\anydirmap}[2]{{#1}^\sharp(#2)}
+\newcommand{\posmap}[1]{{#1}_1}
+\newcommand{\anydirmap}[1]{{#1}^\sharp}
+\newcommand{\dirmap}[2]{\anydirmap{#1}_{#2}}
+\newcommand{\posmapof}[2]{\posmap{#1}(#2)}
+\newcommand{\anydirmapof}[2]{\anydirmap{#1}(#2)}
+\newcommand{\dirmapof}[3]{\dirmap{#1}{#2}(#3)}
 
 \newcommand{\catname}[1]{{\normalfont\mathbf{#1}}}
 \newcommand{\Set}{\catname{Set}}
 
 
 \definecolor{rcol}{RGB}{255,0,0}
-\definecolor{gcol}{RGB}{0,150,0}
-\definecolor{pcol}{RGB}{170,0,170}
-\definecolor{bcol}{RGB}{0,0,255}
 \definecolor{ycol}{RGB}{210,130,0}
+\definecolor{gcol}{RGB}{0,150,0}
+\definecolor{bcol}{RGB}{0,0,255}
 
 \tikzset{every picture/.style={scale=.1,baseline}}
 
