@@ -7,24 +7,28 @@
 \newcommand{\op}{\mathrm{op}}
 \newcommand{\Ob}{\operatorname{Ob}}
 \newcommand{\Arr}{\operatorname{Arr}}
-\newcommand{\transformto}{\to}
+\newcommand{\prof}{\multimapdotbothA}
+\newcommand{\backref}{\vcenter{\hbox{\larger[2]$\star$}}}
+\newcommand{\place}{-}
 \newcommand{\base}{\mathrm{base}}
+\newcommand{\transformto}{\to}
+\newcommand{\canoniso}{=}
+\newcommand{\posof}{\in}
 \newcommand{\sub}{\mathrel{\triangleleft}}
 \newcommand{\subd}{\mathrel{\!\vcenter{\hbox{\larger[-12]$\blacktriangleleft$}}\!}}
 \newcommand{\idsub}{\id_{\sub}}
 \newcommand{\idsubd}{\id_{\subd}}
-\newcommand{\posof}{\in}
-\newcommand{\canoniso}{=}
-\newcommand{\backref}{\vcenter{\hbox{\larger[2]$\star$}}}
-\newcommand{\cat}[1]{\mathcal{#1}}
-\newcommand{\prof}{\multimapdotbothA}
 
+\newcommand{\cat}[1]{\mathcal{#1}}
 \newcommand{\bundle}[1]{\overset{#1}{\to}}
+\newcommand{\shrink}[2][.65]{\scalebox{#1}{$#2$}}
 \newcommand{\pos}[1]{#1(1)}
+\newcommand{\dir}[2]{#1[#2]}
 \newcommand{\posmap}[2]{{#1}_1(#2)}
 % \newcommand{\dirmap}[3]{{#1}^\sharp(#2,#3)}
 \newcommand{\dirmap}[3]{{#1}^\sharp_{#2}(#3)}
-\newcommand{\shrink}[2][.65]{\scalebox{#1}{$#2$}}
+% \newcommand{\anydirmap}[2]{\dirmap{#1}{\place}{#2}}
+\newcommand{\anydirmap}[2]{{#1}^\sharp(#2)}
 
 \newcommand{\catname}[1]{{\normalfont\mathbf{#1}}}
 \newcommand{\Set}{\catname{Set}}
