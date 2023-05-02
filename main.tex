@@ -326,55 +326,55 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
 
   Observe first that the identity law forces $\posmapof{\rho}{a}_\base = a$
   for all $a \in \pos{M}$.
-  Therefore the expression $\posmapof{\rho}{a}_x$ for $x \in \dir{M}{a}$ has a
+  Therefore the expression $\posmapof{\rho}{a}_z$ for $z \in \dir{M}{a}$ has a
   well-defined meaning.
 
   Let $\cat{D}$ be the category corresponding to $D$. We gather the
-  data for a family of copresheaves $\{X_a\}_{a \in A}$ on $\cat{D}$.
+  data for a family of copresheaves $\{Z_a\}_{a \in A}$ on $\cat{D}$.
   \begin{itemize}
   \item The family's indexing set $A$ is $\pos{M}$, the set
     of positions in $M$.
-  \item The total set of elements $\sum_{d \in \Ob(\cat{D})}X_a(d)$ in
-    $X_a$ is $\dir{M}{a}$, the set of directions from $a$.
-  \item The bundle map $t$ assigning each element $x$ in $X_a$ its indexing
-    object in $\Ob(\cat{D}) = \pos{D}$ is given by $\posmapof{\rho}{a}_x$.
-  \item The multiplication map $m$ sends each element $x \in X_a(d)$ and compatible
-    arrow $f \in \dir{D}{d}$ to $\dirmapof{\rho}{a}{x \subd f}$.
+  \item The total set of elements $\sum_{d \in \Ob(\cat{D})}Z_a(d)$ in
+    $Z_a$ is $\dir{M}{a}$, the set of directions from $a$.
+  \item The bundle map $t$ assigning each element $z$ in $Z_a$ its indexing
+    object in $\Ob(\cat{D}) = \pos{D}$ is given by $\posmapof{\rho}{a}_z$.
+  \item The multiplication map $m$ sends each element $z \in Z_a(d)$ and compatible
+    arrow $f \in \dir{D}{d}$ to $\dirmapof{\rho}{a}{z \subd f}$.
   \end{itemize}
   
   Next, observe that if we have such prerequisite data (not laws) for
   a copresheaf on $\cat{D}$, then we find that imposing the copresheaf
-  associativity law $m(m(x, f), g) = m(x, m(f, g))$ forces the law
-  $t(m(x,f)) = t(f)$ to hold.\footnote{Given that $x$ and $f$ are
-    composable, we have $m(m(x,f),e(t(f))) = m(x,m(f,e(t(f))))$, since
+  associativity law $m(m(z, f), g) = m(z, m(f, g))$ forces the law
+  $t(m(z,f)) = t(f)$ to hold.\footnote{Given that $z$ and $f$ are
+    composable, we have $m(m(z,f),e(t(f))) = m(z,m(f,e(t(f))))$, since
     the right side is defined. The left side only makes sense if
-    $t(x,f) = s(e(t(f)))$, which is $t(f)$.} (The argument works the same
+    $t(z,f) = s(e(t(f)))$, which is $t(f)$.} (The argument works the same
   for copresheaves as it does for categories.)
 
-  We verify each $X_a$ satisfies the laws of a copresheaf on $\cat{D}$.
+  We verify each $Z_a$ satisfies the laws of a copresheaf on $\cat{D}$.
   \begin{itemize}
-  \item The identity law $m(x, e(t(x))) = x$ is directly expressed by
+  \item The identity law $m(z, e(t(z))) = z$ is directly expressed by
     the right comodule identity law, which identifies
-    ${\anydirmapof{\rho}{x \subd \anydirmapof{\varepsilon}{\idsubd}}}$
+    ${\anydirmapof{\rho}{z \subd \anydirmapof{\varepsilon}{\idsubd}}}$
     whenever this makes sense.
-  \item The associativity law $m(m(x, f), g) = m(x, m(f, g))$ is
+  \item The associativity law $m(m(z, f), g) = m(z, m(f, g))$ is
     directly expressed by the right comodule associativity law, which
     identifies
-    ${\anydirmapof{\rho}{\anydirmapof{\rho}{x \subd f} \subd g}}$ with
-    ${\anydirmapof{\rho}{x \subd \anydirmapof{\delta}{f \subd g}}}$ whenever this makes sense.
-  \item The law $t(m(x, f)) = t(f)$ is forced to hold (due to the
+    ${\anydirmapof{\rho}{\anydirmapof{\rho}{z \subd f} \subd g}}$ with
+    ${\anydirmapof{\rho}{z \subd \anydirmapof{\delta}{f \subd g}}}$ whenever this makes sense.
+  \item The law $t(m(z, f)) = t(f)$ is forced to hold (due to the
     right comodule associativity law).
   \end{itemize}
 
-  Conversely, let $\{X_a\}_{a \in A}$ be a family of copresheaves on
+  Conversely, let $\{Z_a\}_{a \in A}$ be a family of copresheaves on
   $\cat{D}$. Let $M$ denote the polynomial described by the family of
   total sets of elements
-  $\{\sum_{d \in \Ob(\cat{D})}X_a(d)\}_{a \in A}$. We will exhibit a right
+  $\{\sum_{d \in \Ob(\cat{D})}Z_a(d)\}_{a \in A}$. We will exhibit a right
   $D$-comodule struture on $M$.
   \begin{itemize}
   \item The right comodule comultiplication $\rho$ endows each position $a \in A$ with
-    the map $\dirmap{\rho}{a}$ sending each $x \subd f$ to $m(x, f)$ for
-    all $x \in X_a(d), f: d \to d' \in \cat{D}$. This implicitly
+    the map $\dirmap{\rho}{a}$ sending each $z \subd f$ to $m(z, f)$ for
+    all $z \in Z_a(d), f: d \to d' \in \cat{D}$. This implicitly
     determines $\posmapof{\rho}{a}$ as long as the domain of $\dirmap{\rho}{a}$ is
     nonempty; otherwise let $\posmapof{\rho}{a}$ be the unique position in
     $M \sub D$ with $\posmapof{\rho}{a}_\base = a$.
@@ -444,16 +444,16 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
     bundle map $s$ from the total set of elements
     $\sum_{x \in \Ob(\int_{\cat{C}}X)}Z(x)$ to $\Ob(\int_{\cat{C}}X)$
     sending each $z \in Z(x)$ to $x$.
-  \item The multiplication map $m$ sends each arrow $f|_w: w \to x$
+  \item The multiplication map $m$ sends each arrow $\atel{f}{w}: w \to x$
     (in $\int_{\cat{C}}X$, lying over $f: t(w) \to t(x)$ in $\cat{C}$)
     and $x$-indexed element $z \in Z(x) = \dir{M}{x}$ to
     $\dirmapof{\lambda}{w}{f \subd z}$.
 
     (To be clear, the domain of this map is the set of tuples
     $(w, f, z)$ such that $t(w) = s(f)$ and $m(w, f) = s(z)$. This is
-    indeed the set of pairs $(f|_w, z)$ that should belong in the
+    indeed the set of pairs $(\atel{f}{w}, z)$ that should belong in the
     domain of multiplication for our presheaf on $\int_{\cat{C}}X$,
-    since an arrow $f|_w$ in $\int_{\cat{C}}X$ is a pair $(w, f)$ such
+    since an arrow $\atel{f}{w}$ in $\int_{\cat{C}}X$ is a pair $(w, f)$ such
     that $t(w) = s(f)$, and the target of this arrow is $m(w, f)$.)
   \end{itemize}
 
@@ -461,19 +461,19 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   composition in $\int_{\cat{C}}X$.
   \begin{itemize}
   \item If $x$ is an element of $X$, then $e(x)$ will refer to
-    $e(t(x))|_x$.
-  \item If $f|_w$ and $g|_{m(w,f)}$ are composable arrows in
-    $\int_{\cat{C}}X$, then $m(f|_w, g|_{m(w,f)})$ will refer to
-    $m(f, g)|_w$.
+    $\atel{e(t(x))}{x}$.
+  \item If $\atel{f}{w}$ and $\atel{g}{m(w,f)}$ are composable arrows in
+    $\int_{\cat{C}}X$, then $m(\atel{f}{w}, \atel{g}{m(w,f)})$ will refer to
+    $\atel{m(f, g)}{w}$.
   \end{itemize}
 
   We verify $X$ satisfies the laws of a copresheaf on $\cat{C}$.
   \begin{itemize}
   \item The identity law $m(x, e(t(x))) = x$ is the content of the left
-    comodule identity law for positions, which says that
+    comodule identity law as regards positions, which says that
     $\posmapof{\lambda}{x}_{\dirmapof{\varepsilon}{\posmapof{\lambda}{x}_\base}{\idsubd}} = x$.
   \item The associativity law $m(m(x, f), g) = m(x, m(f, g))$ is the
-    content of the left comodule associativity law for positions,
+    content of the left comodule associativity law as regards positions,
     which says that
     $\posmapof{\lambda}{\posmapof{\lambda}{x}_f}_g =
     \posmapof{\lambda}{x}_{\dirmapof{\delta}{\posmapof{\lambda}{x}_\base}{f
@@ -485,18 +485,18 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   Now we verify $Z$ satisfies the laws of a presheaf on $\int_{\cat{C}}X$.
   \begin{itemize}
   \item The identity law $m(e(s(z)), z) = z$ is the content of the left
-    comodule identity law for directions, which identifies
+    comodule identity law as regards directions, which identifies
     ${\anydirmapof{\lambda}{\anydirmapof{\varepsilon}{\idsubd} \subd z}}$
     with $z$ whenever this makes sense.
   \item The associativity law
-    $m(m(f|_w, g|_{m(w,f)}), z) = m(f|_w, m(g|_{m(w,f)}, z))$ is the
-    content of the left comodule associativity law for
+    $m(m(\atel{f}{w}, \atel{g}{m(w,f)}), z) = m(\atel{f}{w}, m(\atel{g}{m(w,f)}, z))$ is the
+    content of the left comodule associativity law as regards
     directions, which identifies
     ${\anydirmapof{\lambda}{\anydirmapof{\delta}{f \subd g} \subd z}}$
     with
     ${\anydirmapof{\lambda}{f \subd \anydirmapof{\lambda}{g \subd z}}}$
     whenever this makes sense.
-  \item The law $s(m(f|_w, z)) = s(f|_w)$ is forced to hold by the
+  \item The law $s(m(\atel{f}{w}, z)) = s(\atel{f}{w})$ is forced to hold by the
     associativity law, as we have seen previously (in the dual
     scenario).
   \end{itemize}
@@ -511,7 +511,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
     positions by $\posmapof{\lambda}{x}_\base = t(x)$ and
     $\posmapof{\lambda}{x}_f = m(x,f)$ for all ${f \in \dir{C}{t(x)}}$.
   \item For each position $x$, the map $\dirmap{\lambda}{x}$ sends each
-    $f \subd z$ to $m(f|_x, z)$ for all
+    $f \subd z$ to $m(\atel{f}{x}, z)$ for all
     ${f \in \dir{C}{t(x)}}, {z \in Z(m(x,f))}$.
   \end{itemize}
 
@@ -528,7 +528,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   Polynomial bicomodules are prafunctors between presheaf categories.
 \end{prop}
 \begin{proof}
-  Let $C$ and $D$ be polynomial comonoids and let $M$ a bimodule from
+  Let $C$ and $D$ be polynomial comonoids and let $M$ a bicomodule from
   $C$ to $D$ with left module comultiplication $\lambda$ and right
   module comultiplication $\rho$.
   \begin{center}
@@ -577,15 +577,15 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   We have already seen that $M$ as a left $\cat{C}$-comodule amounts to a
   $\cat{C}$-copresheaf $X$ and a presheaf $Z$ on $\int_{\cat{C}}X$,
   and that $M$ as a right $\cat{D}$-comodule amounts to a family of
-  $\cat{D}$-copresheaves $\{X_i\}_{i \in I}$.
+  $\cat{D}$-copresheaves $\{Z_i\}_{i \in I}$.
 
   The set $\pos{M}$ of positions in $M$ serves as both the set of
   elements in the $\cat{C}$-copresheaf $X$, that is,
   $\Ob(\int_{\cat{C}}X)$, as well as the indexing set $I$ for
-  $\{X_i\}_{i \in I}$. For any position $x \in \pos{M}$, the set
+  $\{Z_i\}_{i \in I}$. For any position $x \in \pos{M}$, the set
   $\dir{M}{x}$ of directions from $x$ serves as both $Z(x)$, the set of
   $x$-indexed elements in the $\int_{\cat{C}}X$-presheaf $Z$, as well
-  as the set of elements in the $\cat{D}$-copresheaf $X_x$.
+  as the set of elements in the $\cat{D}$-copresheaf $Z_x$.
 
   Moreover, $M$ and its left and right comodule structures are recovered
   from such information. That is, the data of a $\cat{C}$-copresheaf
@@ -595,8 +595,8 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   $\cat{C}$-module and right $\cat{D}$-module, assuming no
   compatibility.
 
-  The law $m(m(f|_w, z), g) = m(f|_w, m(z, g))$, encoding naturality
-  of the maps $Z(f|_w): Z(x) \to Z(w)$ (with respect to the
+  The law $m(m(\atel{f}{w}, z), g) = m(\atel{f}{w}, m(z, g))$, encoding naturality
+  of the maps $Z(\atel{f}{w}): Z(x) \to Z(w)$ (with respect to the
   $\cat{D}$-copresheaf structure on $Z(x)$ and $Z(w)$), is directly
   expressed by the bicomodule law, which identifies
   $\anydirmapof{\rho}{\anydirmapof{\lambda}{f \subd z} \subd g}$ with
@@ -613,49 +613,78 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   Maps between bicomodules are natural transformations between prafunctors.
 \end{prop}
 \begin{proof}
-  Under the correspondence between prafunctors and profunctors, a
+  First, recall\footnote{We have not shown this in this paper.} that
+  under the correspondence between prafunctors and profunctors, a
   natural transformation between prafunctors
   $F, G: \Set^{\cat{D}} \to \Set^{\cat{C}}$ respectively corresponding
   to profunctors
   $M : (\int_{\cat{C}} X_M) \prof \cat{D}, N : (\int_{\cat{C}} X_N)
   \prof \cat{D}$ (where $X_M$ and $X_N$ are $\cat{C}$-copresheaves) is
   identified with a copresheaf map $\posmap{\alpha}$ from $X_M$ to
-  $X_N$ and maps $(\dirmap{\alpha}{x})_d$ from
+  $X_N$ and maps $\restrict{\dirmap{\alpha}{x}}{d}$ from
   $N(\posmapof{\alpha}{x}, d)$ to $M(x, d)$, natural in $x$ and $d$.
 
-  Let $C$ and $D$ be polynomial comonoids. Let $M$ and $N$ be
-  bimodules from $C$ to $D$, and let $\alpha$ be a bimodule map from
-  $M$ to $N$.
-
-  \begin{center}
-    \input{fig/mod.tikz}
-    \hspace{-.75em}
-    $\underset{\alpha}{\transformto}$
-    \hspace{.5em}
-    \input{fig/modmap.tikz}
-  \end{center}
-
-  \begin{center}
-    % \input{fig/modmapr1.tikz}
-    $\canoniso$
-    \quad
-    % \input{fig/modmapr2.tikz}
-  \end{center}
-
-  \begin{center}
-    % \input{fig/modmapl1.tikz}
-    $\canoniso$
-    \quad
-    % \input{fig/modmapl2.tikz}
-  \end{center}
-
+  Let $C$ and $D$ be polynomial comonoids (with corresponding
+  categories $\cat{C}$ and $\cat{D}$). Let $M$ and $N$ be bicomodules
+  from $C$ to $D$ (with respective left comodule comultiplication
+  transformations $\lambda_M$ and $\lambda_N$ and respective right
+  comodule comultiplication transformations $\rho_M$ and $\rho_N$),
+  and let $\alpha$ be a bicomodule map from $M$ to $N$.
 
   As usual, $\alpha$ consists of maps
   $\posmap{\alpha}: \pos{C} \to \pos{D}$ and
   $\dirmap{\alpha}{x}: \dir{D}{\posmapof{\alpha}{x}} \to \dir{C}{x}$
-  for all positions $x \in \pos{C}$.
+  for all positions $x \in \pos{C}$. Translated into language about
+  the corresponding profunctors, $\posmap{\alpha}$ is a map from the
+  set of elements of $X_M$ to the set of elements of $X_N$ (where
+  $X_M$ and $X_N$ are the $\cat{C}$-copresheaves induced by $M$ and
+  $N$, respectively), and $\dirmap{\alpha}{x}$ is a map from
+  $Z_N(\posmapof{\alpha}{x})$ to $Z_M(x)$ (where $Z_M$ and $Z_N$ are
+  the $\int_{\cat{C}}X_M$-presheaf and $\int_{\cat{C}}X_N$-presheaf
+  induced by $M$ and $N$, respectively). We define the map
+  $\restrict{\dirmap{\alpha}{x}}{d}$ for $d \in \cat{D}$ to be the
+  restriction of $\dirmap{\alpha}{x}$ to just the elements in the
+  $\cat{D}$-copresheaf $Z_N(\posmap{\alpha}{x})$ with indexing object
+  $d$.
 
-  Observe first that the 
+  We verify this $\alpha$ corresponds to a natural transformation
+  between prafunctors $\Set^{\cat{D}} \to \Set^{\cat{C}}$ in the sense
+  described above.
+  \begin{itemize}
+  \item The naturality in $c$ law
+    $\posmapof{\alpha}{m(x,f)} = m(\posmapof{\alpha}{x},f)$ for the
+    $\cat{C}$-copresheaf map is the content of the left comodule map
+    law
+    $\alpha \fatsemi \lambda_N = \lambda_M \fatsemi (\id_C \sub
+    \alpha)$ as regards positions.
+    
+    (This also forces the law $t(\posmapof{\alpha}{x}) = t(x)$, i.e.,
+    $\posmap{\alpha}$ preserves indexing objects.)
+  \item The law $t(\dirmapof{\alpha}{x}{z}) = t(z)$ (i.e., each
+    $\restrict{\dirmap{\alpha}{x}}{d}$ preserves the indexing object
+    $d \in \cat{D}$) is the content of the right comodule map law
+    $\alpha \fatsemi \rho_N = \rho_M \fatsemi (\alpha \sub \id_D)$ as
+    regards positions.
+  \item The naturality in $x$ law
+    $\dirmapof{\alpha}{x}{m(\atel{f}{\posmapof{\alpha}{x}}, z)} =
+    m(\atel{f}{x}, \dirmapof{\alpha}{m(x, f)}{z})$ is the content of the
+    left comodule map as regards directions, which identifies
+    ${\anydirmapof{\alpha}{\anydirmapof{\lambda_N}{f \subd z}}}$ with
+    $\anydirmapof{\lambda_M}{f \subd \anydirmapof{\alpha}{z}}$ whenever
+    this makes sense.
+  \item The naturality in $d$ law
+    $\dirmapof{\alpha}{x}{m(z, f)} = m(\dirmapof{\alpha}{x}{z}, f)$
+    for the maps $\dirmap{alpha}{x}$ as $\cat{D}$-copresheaf maps is
+    the content of the right comodule map law as regards directions,
+    which identifies
+    $\anydirmapof{\alpha}{\anydirmapof{\rho_N}{z \subd f}}$ with
+    $\anydirmapof{\rho_M}{\anydirmapof{\alpha}{z} \subd f}$ whenever
+    this makes sense.
+  \end{itemize}
+
+  Conversely, any natural transformation between prafunctors
+  $\Set^{\cat{D}} \to \Set^{\cat{C}}$ gives rise to such an $\alpha$,
+  satisfying such laws.
 \end{proof}
 
 \begin{prop}
@@ -669,7 +698,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   $F_{M \sub_D N} \cong F_N \fatsemi F_M$ (for bicomodules $M$ from
   $C$ to $D$ and $N$ from $D$ to $E$).
   
-  We show that the prafunctor corresponding to the bimodule $M$ is
+  We show that the prafunctor corresponding to the bicomodule $M$ is
   $F_M$.
 
   

@@ -20,7 +20,8 @@
 
 \newcommand{\cat}[1]{\mathcal{#1}}
 \newcommand{\bundle}[1]{\overset{#1}{\to}}
-\newcommand{\shrink}[2][.65]{\scalebox{#1}{$#2$}}
+\newcommand{\restrict}[2]{#1|_{#2}}
+\newcommand{\atel}[2]{\restrict{#1}{#2}}
 \newcommand{\pos}[1]{#1(1)}
 \newcommand{\dir}[2]{#1[#2]}
 \newcommand{\posmap}[1]{{#1}_1}
@@ -30,13 +31,14 @@
 \newcommand{\anydirmapof}[2]{\anydirmap{#1}(#2)}
 \newcommand{\dirmapof}[3]{\dirmap{#1}{#2}(#3)}
 
+\newcommand{\shrink}[2][.65]{\scalebox{#1}{$#2$}}
+
 \newcommand{\catname}[1]{{\normalfont\mathbf{#1}}}
 \newcommand{\Set}{\catname{Set}}
 
 
 \definecolor{rcol}{RGB}{255,0,0}
 \definecolor{ycol}{RGB}{210,130,0}
-\definecolor{gcol}{RGB}{0,150,0}
 \definecolor{bcol}{RGB}{0,0,255}
 
 \tikzset{every picture/.style={scale=.1,baseline}}
