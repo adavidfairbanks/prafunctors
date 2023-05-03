@@ -285,7 +285,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
 
   The above processes of translation between the prerequisite data
   (not laws) for a category subject to just $s(e(a)) = a$ and
-  $s(m(f, g)) = g$, and the prerequisite data (not laws) of a
+  $s(m(f, g)) = g$, and the prerequisite data (not laws) for a
   polynomial comonoid subject to just
   $\posmapof{\delta}{a}_\base = a$, are inverse by
   construction. Moreover, we saw earlier that the identity and
@@ -382,7 +382,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
 
   The above processes of translation between the prerequisite data
   (not laws) for a family of presheaves on $\cat{D}$, and the
-  prerequisite data (not laws) of a right $D$-comodule subject to just
+  prerequisite data (not laws) for a right $D$-comodule subject to just
   $\posmapof{\rho}{a}_\base = a$, are inverse by
   construction. Moreover, we saw earlier that the identity and
   associativity right comodule laws, in this context, directly translate
@@ -444,17 +444,17 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
     bundle map $s$ from the total set of elements
     $\sum_{x \in \Ob(\int_{\cat{C}}X)}Z(x)$ to $\Ob(\int_{\cat{C}}X)$
     sending each $z \in Z(x)$ to $x$.
-  \item The multiplication map $m$ sends each arrow $\atel{f}{w}: w \to x$
-    (in $\int_{\cat{C}}X$, lying over $f: t(w) \to t(x)$ in $\cat{C}$)
-    and $x$-indexed element $z \in Z(x) = \dir{M}{x}$ to
-    $\dirmapof{\lambda}{w}{f \subd z}$.
+  \item The multiplication map $m$ sends each arrow $\atel{f}{x}: x \to w$
+    (in $\int_{\cat{C}}X$, lying over $f: t(x) \to t(w)$ in $\cat{C}$)
+    and $w$-indexed element $z \in Z(w) = \dir{M}{w}$ to
+    $\dirmapof{\lambda}{x}{f \subd z}$.
 
     (To be clear, the domain of this map is the set of tuples
-    $(w, f, z)$ such that $t(w) = s(f)$ and $m(w, f) = s(z)$. This is
-    indeed the set of pairs $(\atel{f}{w}, z)$ that should belong in the
+    $(x, f, z)$ such that $t(x) = s(f)$ and $m(x, f) = s(z)$. This is
+    indeed the set of pairs $(\atel{f}{x}, z)$ that should belong in the
     domain of multiplication for our presheaf on $\int_{\cat{C}}X$,
-    since an arrow $\atel{f}{w}$ in $\int_{\cat{C}}X$ is a pair $(w, f)$ such
-    that $t(w) = s(f)$, and the target of this arrow is $m(w, f)$.)
+    since an arrow $\atel{f}{x}$ in $\int_{\cat{C}}X$ is a pair $(x, f)$ such
+    that $t(x) = s(f)$, and the target of this arrow is $m(x, f)$.)
   \end{itemize}
 
   We will also use the following notation for identities and
@@ -462,22 +462,22 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   \begin{itemize}
   \item If $x$ is an element of $X$, then $e(x)$ will refer to
     $\atel{e(t(x))}{x}$.
-  \item If $\atel{f}{w}$ and $\atel{g}{m(w,f)}$ are composable arrows in
-    $\int_{\cat{C}}X$, then $m(\atel{f}{w}, \atel{g}{m(w,f)})$ will refer to
-    $\atel{m(f, g)}{w}$.
+  \item If $\atel{f}{x}$ and $\atel{g}{m(x,f)}$ are composable arrows in
+    $\int_{\cat{C}}X$, then $m(\atel{f}{x}, \atel{g}{m(x,f)})$ will refer to
+    $\atel{m(f, g)}{x}$.
   \end{itemize}
 
   We verify $X$ satisfies the laws of a copresheaf on $\cat{C}$.
   \begin{itemize}
   \item The identity law $m(x, e(t(x))) = x$ is the content of the left
     comodule identity law as regards positions, which says that
-    $\posmapof{\lambda}{x}_{\dirmapof{\varepsilon}{\posmapof{\lambda}{x}_\base}{\idsubd}} = x$.
+    $\posmapof{\lambda}{x}_{\left(\dirmapof{\varepsilon}{\posmapof{\lambda}{x}_\base}{\idsubd}\right)} = x$.
   \item The associativity law $m(m(x, f), g) = m(x, m(f, g))$ is the
     content of the left comodule associativity law as regards positions,
     which says that
     $\posmapof{\lambda}{\posmapof{\lambda}{x}_f}_g =
-    \posmapof{\lambda}{x}_{\dirmapof{\delta}{\posmapof{\lambda}{x}_\base}{f
-        \subd g}}$.
+    \posmapof{\lambda}{x}_{\left(\dirmapof{\delta}{\posmapof{\lambda}{x}_\base)}{f
+        \subd g}\right)}$.
   \item The law $t(m(x, f)) = t(f)$ is forced to hold by the
     associativity law, as we have seen previously.
   \end{itemize}
@@ -489,14 +489,14 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
     ${\anydirmapof{\lambda}{\anydirmapof{\varepsilon}{\idsubd} \subd z}}$
     with $z$ whenever this makes sense.
   \item The associativity law
-    $m(m(\atel{f}{w}, \atel{g}{m(w,f)}), z) = m(\atel{f}{w}, m(\atel{g}{m(w,f)}, z))$ is the
+    $m(m(\atel{f}{x}, \atel{g}{m(x,f)}), z) = m(\atel{f}{x}, m(\atel{g}{m(x,f)}, z))$ is the
     content of the left comodule associativity law as regards
     directions, which identifies
     ${\anydirmapof{\lambda}{\anydirmapof{\delta}{f \subd g} \subd z}}$
     with
     ${\anydirmapof{\lambda}{f \subd \anydirmapof{\lambda}{g \subd z}}}$
     whenever this makes sense.
-  \item The law $s(m(\atel{f}{w}, z)) = s(\atel{f}{w})$ is forced to hold by the
+  \item The law $s(m(\atel{f}{x}, z)) = s(\atel{f}{x})$ is forced to hold by the
     associativity law, as we have seen previously (in the dual
     scenario).
   \end{itemize}
@@ -517,7 +517,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
 
   The above processes of translation between the prerequisite data
   (not laws) for a presheaf on the category of elements of a
-  copresheaf on $\cat{C}$, and the prerequisite data (not laws) of a
+  copresheaf on $\cat{C}$, and the prerequisite data (not laws) for a
   left $C$-comodule, are inverse by construction. Moreover, we saw
   earlier that the identity and associativity left comodule
   laws, in this context, directly translate to the identity and
@@ -595,9 +595,9 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   $\cat{C}$-module and right $\cat{D}$-module, assuming no
   compatibility.
 
-  The law $m(m(\atel{f}{w}, z), g) = m(\atel{f}{w}, m(z, g))$, encoding naturality
-  of the maps $Z(\atel{f}{w}): Z(x) \to Z(w)$ (with respect to the
-  $\cat{D}$-copresheaf structure on $Z(x)$ and $Z(w)$), is directly
+  The law $m(m(\atel{f}{x}, z), g) = m(\atel{f}{x}, m(z, g))$, encoding naturality
+  of the maps $Z(\atel{f}{x}): Z(w) \to Z(x)$ (with respect to the
+  $\cat{D}$-copresheaf structure on $Z(w)$ and $Z(x)$), is directly
   expressed by the bicomodule law, which identifies
   $\anydirmapof{\rho}{\anydirmapof{\lambda}{f \subd z} \subd g}$ with
   $\anydirmapof{\lambda}{f \subd \anydirmapof{\rho}{z \subd g}}$ whenever
@@ -613,23 +613,46 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   Maps between bicomodules are natural transformations between prafunctors.
 \end{prop}
 \begin{proof}
-  First, recall\footnote{We have not shown this in this paper.} that
-  under the correspondence between prafunctors and profunctors, a
-  natural transformation between prafunctors
-  $F, G: \Set^{\cat{D}} \to \Set^{\cat{C}}$ respectively corresponding
-  to profunctors
-  $M : (\int_{\cat{C}} X_M) \prof \cat{D}, N : (\int_{\cat{C}} X_N)
-  \prof \cat{D}$ (where $X_M$ and $X_N$ are $\cat{C}$-copresheaves) is
-  identified with a copresheaf map $\posmap{\alpha}$ from $X_M$ to
-  $X_N$ and maps $\restrict{\dirmap{\alpha}{x}}{d}$ from
-  $N(\posmapof{\alpha}{x}, d)$ to $M(x, d)$, natural in $x$ and $d$.
+  First, we see what a natural transformation between prafunctors
+  translates to under the correspondence between prafunctors and
+  profunctors.
+
+  Recall\footnote{We have not shown this in this paper.} that a
+  prafunctor $\Set^{\cat{D}} \to \Set^{\cat{C}}$ is the same as a
+  functor from $\cat{C}$ into the category of prafunctors
+  $\Set^{\cat{D}} \to \Set$, and that prafunctors
+  $\Set^{\cat{D}} \to \Set$ are coproducts of representables. Hence a
+  prafunctor decomposes into a $\cat{C}$-shaped diagram of coproducts
+  of representable functors $\Set^{\cat{D}} \to \Set$, and maps of
+  prafunctors are maps of such diagrams. A natural transformation
+  between such coproducts of representables
+  \[\sum_{x \in X\!(c)}\Hom(Z_x, -) \quad \to \quad \sum_{x' \in X'\!(c)}\Hom(Z_{x'}',
+    -)\] is the same as a function $\posmap{\alpha}$ from $X(c)$ to
+  $X'(c)$ and a map of $\cat{D}$-presheaves
+  ${Z_{\posmapof{\alpha}{x}} \to Z_x}$ for each $x \in X(c)$ (by the
+  Yoneda lemma). On that account, we can see how a $\cat{C}$-shaped
+  diagram of natural transformations is a $\cat{D}$-copresheaf-valued
+  presheaf on the category of elements of a $\cat{C}$-copresheaf: the
+  arrows of $\cat{C}$ act as functions between the indexing sets of
+  $\cat{D}$-copresheaf families $\{Z_x\}_{x \in X(c)}$, and along each
+  application of an arrow is a $\cat{D}$-copresheaf map in the
+  opposite direction.
+
+  Putting it all together, a natural transformation between
+  prafunctors corresponding to profunctors
+  $Z : (\int_{\cat{C}} X)^\op \to \Set^{\cat{D}}$ and
+  $Z' : (\int_{\cat{C}} X')^\op \to \Set^{\cat{D}}$ (where $X$ and
+  $X'$ are $\cat{C}$-copresheaves) amounts to a copresheaf map
+  $\posmap{\alpha}$ from $X$ to $X'$ and maps $\dirmap{\alpha}{x}$
+  from $Z'(\posmapof{\alpha}{x})(d)$ to $Z(x)(d)$, natural in $x$ and
+  $d$. (Moreover, vertical composition of natural transformations
+  between prafunctors corresponds to the evident composition of such
+  $\alpha$ maps.)
 
   Let $C$ and $D$ be polynomial comonoids (with corresponding
   categories $\cat{C}$ and $\cat{D}$). Let $M$ and $N$ be bicomodules
-  from $C$ to $D$ (with respective left comodule comultiplication
-  transformations $\lambda_M$ and $\lambda_N$ and respective right
-  comodule comultiplication transformations $\rho_M$ and $\rho_N$),
-  and let $\alpha$ be a bicomodule map from $M$ to $N$.
+  from $C$ to $D$, and let $\alpha$ be a bicomodule map from $M$ to
+  $N$.
 
   As usual, $\alpha$ consists of maps
   $\posmap{\alpha}: \pos{C} \to \pos{D}$ and
@@ -641,11 +664,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   $N$, respectively), and $\dirmap{\alpha}{x}$ is a map from
   $Z_N(\posmapof{\alpha}{x})$ to $Z_M(x)$ (where $Z_M$ and $Z_N$ are
   the $\int_{\cat{C}}X_M$-presheaf and $\int_{\cat{C}}X_N$-presheaf
-  induced by $M$ and $N$, respectively). We define the map
-  $\restrict{\dirmap{\alpha}{x}}{d}$ for $d \in \cat{D}$ to be the
-  restriction of $\dirmap{\alpha}{x}$ to just the elements in the
-  $\cat{D}$-copresheaf $Z_N(\posmap{\alpha}{x})$ with indexing object
-  $d$.
+  induced by $M$ and $N$, respectively).
 
   We verify this $\alpha$ corresponds to a natural transformation
   between prafunctors $\Set^{\cat{D}} \to \Set^{\cat{C}}$ in the sense
@@ -660,9 +679,9 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
     
     (This also forces the law $t(\posmapof{\alpha}{x}) = t(x)$, i.e.,
     $\posmap{\alpha}$ preserves indexing objects.)
-  \item The law $t(\dirmapof{\alpha}{x}{z}) = t(z)$ (i.e., each
-    $\restrict{\dirmap{\alpha}{x}}{d}$ preserves the indexing object
-    $d \in \cat{D}$) is the content of the right comodule map law
+  \item The law $t(\dirmapof{\alpha}{x}{z}) = t(z)$ (i.e.,
+    $\dirmap{\alpha}{x}$ preserves indexing objects of elements)
+    is the content of the right comodule map law
     $\alpha \fatsemi \rho_N = \rho_M \fatsemi (\alpha \sub \id_D)$ as
     regards positions.
   \item The naturality in $x$ law
@@ -674,7 +693,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
     this makes sense.
   \item The naturality in $d$ law
     $\dirmapof{\alpha}{x}{m(z, f)} = m(\dirmapof{\alpha}{x}{z}, f)$
-    for the maps $\dirmap{alpha}{x}$ as $\cat{D}$-copresheaf maps is
+    for the maps $\dirmap{\alpha}{x}$ as $\cat{D}$-copresheaf maps is
     the content of the right comodule map law as regards directions,
     which identifies
     $\anydirmapof{\alpha}{\anydirmapof{\rho_N}{z \subd f}}$ with
@@ -685,23 +704,191 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   Conversely, any natural transformation between prafunctors
   $\Set^{\cat{D}} \to \Set^{\cat{C}}$ gives rise to such an $\alpha$,
   satisfying such laws.
+
+  (Moreover, note that vertical compositions are preserved under the
+  correspondence between prafunctor natural transformations and
+  bicomodule maps, since vertical composition of such natural
+  transformations is achieved by composing the $\alpha$ maps relating
+  the underlying profunctors.)
 \end{proof}
 
 \begin{prop}
   Composition of bicomodules is composition of prafunctors.
 \end{prop}
 \begin{proof}
-  Bicomodules from $D$ to $0$ specialize to copresheaves on $D$ (and maps
-  between such bicomodules are copresheaf maps). Hence each bicomodule
-  $M$ from $C$ to $D$ induces a functor $F_M$ from $D$-copresheaves to
-  $C$-copresheaves by precomposition. Accordingly, we have
-  $F_{M \sub_D N} \cong F_N \fatsemi F_M$ (for bicomodules $M$ from
-  $C$ to $D$ and $N$ from $D$ to $E$).
+  Bicomodules from $D$ to $0$ specialize to copresheaves on $\cat{D}$
+  (and maps between such bicomodules are copresheaf maps). Hence each
+  bicomodule $M$ from $C$ to $D$ induces a functor $M^*$ from
+  $\cat{D}$-copresheaves to $\cat{C}$-copresheaves by
+  precomposition. Accordingly, we have
+  $(M \sub_D N)^* \cong N^* \fatsemi M^*$ (where $M: C \bim D$ and
+  $N: D \bim E$ are bicomodules).
   
-  We show that the prafunctor corresponding to the bicomodule $M$ is
-  $F_M$.
+  We show that the profunctor-induced prafunctor corresponding to the
+  bicomodule $M$ is the same functor $M^*$ induced by horizontal
+  precomposition of $M$.
 
+  Recall\footnote{We have not shown this in this paper.} that the
+  composite $M \sub_D N$ of bicomodules ${M: C \bim D}$ and
+  ${N: D \bim E}$ is the equalizer of $\id_M \subd \lambda_N$ and
+  $\rho_M \subd \id_N$. Its bicomodule structure is given by the
+  unique transformations
+  \[\lambda_{M \sub_D N}: M \sub_D N \to C \sub M \sub_D N \quad
+    \text{ and } \quad \rho_{M \sub_D N} : M \sub_D N \to M \sub_D N
+    \sub E\] such that
+  \[\lambda_{M \sub_D N} \fatsemi (\id_C \sub \iota) = \iota \fatsemi
+  (\lambda_M \sub \id_N) \quad \text{ and } \quad
+  \rho_{M \sub_D N} \fatsemi (\iota \sub \id_E) = \iota \fatsemi
+  (\id_M \sub \rho_N),\] where $\iota$ is the ``inclusion''
+  $M \sub_D N \hookrightarrow M \sub N$.
+
+  Concretely, the positions in $\pos{(M \sub_D N)}$ are the positions
+  $a$ in $\pos{(M \sub N)}$ such that
+  $\posmapof{(\id_M \sub \lambda_N)}{a} = \posmapof{(\rho_M \sub
+    \id_N)}{a}$, and the directions in $\dir{(M \sub_D N)}{a}$ are the
+  equivalence classes of directions in $\dir{(M \sub N)}{a}$ under the
+  equivalence relation generated by
+  \[\dirmapof{(\id_M \sub \lambda_N)}{a}{z_M \subd d \subd z_N} \sim \dirmapof{(\rho_M \sub
+      \id_N)}{a}{z_M \subd d \subd z_N}\] for all directions
+  $z_M \subd d \subd z_N$ from
+  $\posmapof{(\id_M \sub \lambda_N)}{a} = \posmapof{(\rho_M \sub
+    \id_N)}{a}$, i.e., we have
+  \[z_M \subd \anydirmapof{\lambda_N}{d \subd z_N} \sim
+    \anydirmapof{\rho_M}{z_M \subd d} \subd z_N\] whenever this makes
+  sense. The transformations $\lambda_{M \sub_D N}$ and
+  $\rho_{M \sub_D N}$ respectively agree with $\lambda_M \sub \id_N$
+  and $\id_M \sub \rho_N$ on positions, and similarly they send
+  directions $c \subd [z_M \subd z_N]$ to
+  $[\anydirmapof{\lambda_M}{c \subd z_M} \subd z_N]$ and
+  $[z_M \subd z_N] \subd e$ to
+  $[z_M \subd \anydirmapof{\rho_M}{z_M \subd e}]$ whenever this makes
+  sense. (As we will see, we will not end up needing to think about
+  directions in $M \sub_D N$ at all.)
+
+  We are interested in the case where $E = 0$. Here $\rho_N$ is
+  trivial and $N$ is constant (just a set $\pos{N}$ of empty
+  positions) with a $\cat{D}$-copresheaf structure induced by
+  $\lambda_N$. As a right $D$-comodule, $M$ describes a family of
+  $\cat{D}$-copresheaves. Hence $(- \sub_D -)$ may be viewed as an
+  operation that takes as input a family of $\cat{D}$-copresheaves
+  $\{Z_x\}_{x \in X}$ plus another $\cat{D}$-copresheaf $U$ and
+  returns a constant polynomial $P$ (i.e., a set). The positions in
+  $P$ are the $p \in \pos{(M \sub N)}$ such that
+  $m(p_z, f) = p_{m(z, f)}$ for all $z \in M[p_\base]$. Such a $p$ is
+  the same as a natural transformation from any one of the $Z_x$ to
+  $U$.
+
+  This set of natural transformations $P$ is endowed with a
+  $\cat{C}$-copresheaf (left $C$-comodule) structure
+  $\lambda_{M \sub_D N}$, induced by $\lambda_M$. Indeed, $\lambda_M$
+  supplies a covariant action by $\cat{C}$ on the indexing set $X$ of
+  $\{Z_x\}_{x \in X}$ and supplies a natural transformation
+  $Z(\atel{f}{x}): Z_w \to Z_x$ whenever $x$ is sent to $w$ by
+  $f \in \cat{C}$. So we obtain a covariant $\cat{C}$-action on the
+  set of natural transformations from members of $\{Z_x\}_{x \in X}$
+  to $U$ by precomposing such $Z(\atel{f}{x})$ maps.
+
+  In summary,
+  \[P(c) = (M^*(U))(c) = \sum_{x \in X\!(c)}\Hom_{\Set^\cat{D}}(Z_x, U).\]
+
+  This characterizes the behavior of $M^*$ on objects. We see the
+  expected form of the prafunctor corresponding to $M$. In particular,
+  when $U$ is the terminal $\cat{D}$-copresheaf, $P$ is $X$ (the
+  $\cat{C}$-copresheaf induced by $\lambda_M$).
   
+  Next, we seek the behavior of $M^*$ on maps. Recall\footnote{We have
+    not shown this in this paper.} that the horizontal composite
+  $\alpha \sub_D \beta$ of bicomodule maps $\alpha: M \to M'$ and
+  $\beta: N \to N'$ is the unique transformation
+  $M \sub N \to M' \sub N'$ such that
+  \[(\alpha \sub_D \beta) \fatsemi \iota_{M' \sub_D N'} = \iota_{M
+      \sub_D N} \fatsemi (\alpha \sub \beta),\] where
+  $\iota_{M \sub_D N}$ and $\iota_{M' \sub_D N'}$ are respectively the
+  ``inclusions'' ${M \sub_D N \hookrightarrow M \sub N}$ and
+  ${M' \sub_D N' \hookrightarrow M' \sub N'}$.
+
+  Concretely, the transformation $\alpha \sub_D \beta$ agrees with
+  $\alpha \sub \beta$ on positions, and similarly it sends directions
+  $[z_{M'} \subd z_{N'}]$ to
+  $[\anydirmapof{\alpha}{z_{M'}} \subd \anydirmapof{\beta}{z_{N'}}]$
+  whenever this makes sense. (But again, we will not need to look at
+  directions.)
+
+  We will be taking $\alpha = \id_M$, i.e., horizontally precomposing
+  the bicomodule $M$ with the map $\beta$. Since our $N, N': D \bim 0$
+  are constant, $\beta$ is entirely detemined by the map of positions
+  $\posmap{\beta}$, which amounts to a natural transformation between
+  $\cat{D}$-copresheaves. Hence $M \sub_D \beta$ sends each position
+  $a \in \pos{(M \sub_D N)} \subseteq \pos{(M \sub N)}$ to the
+  position $a' \in \pos{(M \sub_D N')} \subseteq \pos{(M \sub N')}$
+  such that ${a'}_\base = a_\base$ and
+  ${a'}_z = \posmapof{\beta}{a_z}$ for all directions
+  $z \in M[a_\base]$. In other words, it is the map that sends a
+  natural transformation $p \in P = \pos{(M \sub_D N)}$ to
+  $p \fatsemi \posmap{\beta}$. This characterizes the behavior of
+  $M^*$ on maps (which could already have been anticipated based on
+  the formula for $M^*(U)$ given above).
+
+  The $\cat{C}$-copresheaf map $M^*(!_U)$ (where $!_U: U \to 1$)
+  assigns each $p: Z_x \to U$ in $M^*(U)$ the index $x \in X$ of its
+  domain $Z_x$, equipping $M^*U$ with the structure of a
+  $\int_{\cat{C}}X$-copresheaf. This is the canonical lift of the
+  functor $M^*: \Set^{\cat{D}} \to \Set^{\cat{C}}$ to a functor
+  $\slicelift{M^*}: \Set^{\cat{D}} \to \Set^{\cat{C}}/M^*(1) =
+  \Set^{\cat{C}}/X \cong \Set^{\int_{\cat{C}}X}$.
+
+  It is left to observe that $\slicelift{M^*}$ is right adjoint to
+  $\cocoextend{Z}: \Set^{\int_{\cat{C}}X} \to \Set^{\cat{D}}$, the
+  cocontinuous extension of the functor
+  $Z: (\int_{\cat{C}}X)^\op \to \Set^{\cat{D}}$ to the free
+  cocompletion of its domain. Fortunately, $U \mapsto \Hom(Z(-),U)$ is
+  precisely the formula for the right adjoint of the cocontinuous
+  extension of a (co)presheaf-valued functor $Z$ to the cocompletion of
+  its domain.
+\end{proof}
+
+\begin{prop}
+  Horizontal composition of bicomodule maps is horizontal composition
+  of natural transformations between prafunctors.
+\end{prop}
+\begin{proof}
+  Each bicomodule map $\alpha: M \to M': C \to D$ induces a natural
+  transformation $\alpha^*:M^* \to {M'}^*$ by horizontal ($\sub_D$)
+  precomposition. Accordingly, we have that the natural transformation
+  $(\alpha \sub_D \beta)^*: (M \sub_D N)^* \to (M' \sub_D N')^*$ is
+  equal to the horizontal composite (as natural transformations) of
+  $\beta^*$ and $\alpha^*$, from $N^* \fatsemi M^*$ to
+  ${N'}^* \fatsemi {M'}^*$ (where both $\alpha: M \to M': C \bim D$
+  and $\beta: N \to N': D \bim E$ are bicomodule maps).
+
+  Let $N$ be a bicomodule $D \bim 0$ (i.e., a
+  $\cat{D}$-copresheaf). The component of $\alpha^*: M^* \to {M'}^*$
+  at $N$ is $\alpha \sub_D \id_N: M^*(N) \to {M'}^*(N)$. The map on
+  positions $\posmap{(\alpha \sub_D \id_N)}$ agrees with
+  $\posmap{(\alpha \sub \id_N)}$, and since $M' \sub_D N$ is constant,
+  there are no directions to account for. This map
+  $\posmap{(\alpha \sub_D \id_N)}$ sends each position
+  ${a \in M \sub_D N \subseteq M \sub N}$ to the position
+  ${a' \in M' \sub_D N \subseteq M \sub N}$ such that
+  ${a'}_\base = \posmapof{\alpha}{a_\base}$ and
+  ${{a'}_z = a_{(\dirmapof{\alpha}{a_\base}{z})}}$ for all directions
+  $z \in M'[\posmapof{\alpha}{a'_\base}]$.
+
+  Recall $M \sub_D N$ is the $\cat{C}$-copresheaf
+  $\sum_{x \in X\!(-)} \Hom(Z(x),U)$, where $Z$ is the functor
+  $\int_{\cat{C}}X \to \Set^{\cat{D}}$ corresponding to $M$ and $U$ is
+  the $\cat{D}$-copresheaf corresponding to $N$. We see that
+  $\posmap{(\alpha \sub_D \id_N)}$ sends each ${p \in \Hom(Z(x),U)}$
+  to
+  $\dirmap{\alpha}{x} \fatsemi {p \in
+    \Hom(Z(\posmapof{\alpha}{x}),U)}$. This is the relevant Yoneda
+  embedding of $\dirmap{\alpha}{x}$, as a map of
+  $\cat{D}$-copresheaves.
+
+  Hence $\alpha^*$ is the same transformation of prafunctors derived
+  from the data in $\alpha$, where indexes of $\cat{D}$-copresheaves
+  are mapped according to $\posmap{\alpha}$ and elements are mapped
+  backwards according to $\anydirmap{\alpha}$.
 \end{proof}
 
 \end{document}

@@ -1,5 +1,4 @@
 \usepackage{amsmath,amssymb,stmaryrd,pxfonts,lmodern,tikz}
-\usetikzlibrary{external}
 
 \newtheorem{prop}{Proposition}
 
@@ -7,11 +6,13 @@
 \newcommand{\op}{\mathrm{op}}
 \newcommand{\Ob}{\operatorname{Ob}}
 \newcommand{\Arr}{\operatorname{Arr}}
+\newcommand{\Hom}{\operatorname{Hom}}
 \newcommand{\prof}{\multimapdotbothA}
-\newcommand{\backref}{\vcenter{\hbox{\larger[2]$\star$}}}
-\newcommand{\base}{\mathrm{base}}
-\newcommand{\transformto}{\to}
+\newcommand{\bim}{\relbar\joinrel\mapstochar\joinrel\rightarrow}
 \newcommand{\canoniso}{=}
+\newcommand{\backref}{\vcenter{\hbox{\larger[2]$\star$}}}
+\newcommand{\transformto}{\to}
+\newcommand{\base}{\mathrm{base}}
 \newcommand{\posof}{\in}
 \newcommand{\sub}{\mathrel{\triangleleft}}
 \newcommand{\subd}{\mathrel{\!\vcenter{\hbox{\larger[-12]$\blacktriangleleft$}}\!}}
@@ -22,6 +23,8 @@
 \newcommand{\bundle}[1]{\overset{#1}{\to}}
 \newcommand{\restrict}[2]{#1|_{#2}}
 \newcommand{\atel}[2]{\restrict{#1}{#2}}
+\newcommand{\slicelift}[1]{\overline{#1}}
+\newcommand{\cocoextend}[1]{\widehat{#1}}
 \newcommand{\pos}[1]{#1(1)}
 \newcommand{\dir}[2]{#1[#2]}
 \newcommand{\posmap}[1]{{#1}_1}
