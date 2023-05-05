@@ -132,40 +132,6 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   be $a_{f'}$.
 \fi
 
-\iffalse Given a transformation $\alpha$, the map $\posmap{\alpha}$ is
-  implicitly determined by the domains of the $\anydirmap{\alpha}$
-  maps. Moreover, a position in a substitution product is determined
-  by the set of names of directions from it (assuming the positions in
-  the factor polynomials have this property too --- which is not true
-  for polynomials featuring multiple constants), even though distinct
-  positions may share certain direction names.
-
-  Hence an equation between horizontal ($\sub$) composites of transformations
-  amounts to firstly an identification between domains of the composite
-  $\sharp$ maps and secondly their agreement in mapping.
-
-  (We can more generally think of any equality between transformations in
-  terms of identification of $\sharp$ maps' domains and their
-  agreement in mapping. But this is only interesting when we
-  have some reason to think of distinct $\sharp$ domains as sharing
-  certain direction names.)
-
-  We can translate arbitrary equalities built from $\sub$
-  into equalities built from $\subd$, e.g.
-  \[\gamma \fatsemi (\alpha \sub \beta) = \delta \sub \varepsilon
-    \iff \anydirmapof{\gamma}{\anydirmap{\alpha} \subd \anydirmap{\beta}} =
-    \anydirmap{\delta} \subd \anydirmap{\varepsilon}\] for all such
-  $\sharp$ maps and values that fit together. Here we may think of the
-  equality as indicating agreement about the definedness
-  on each potential value of the form $f \subd g$ (i.e. agreement on
-  domain), as well as agreement about where each of these values is
-  mapped.
-
-  Alternatively, we may think of this fiberwise, such a map being
-  completely determined by what subset of values of the form
-  $f \subd g$ lies over each individual direction.
-\fi
-
 \begin{prop}
   Polynomial comonoids are categories.
 \end{prop}
@@ -214,7 +180,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   \item The set of objects $\Ob(\cat{C})$ is $\pos{C}$, the set
     of positions in $C$.
   \item The set of arrows $\Arr(\cat{C})$ is
-    $\sum_{a \in \pos{C}}\dir{C}{a}$, the set of all directions in $C$.
+    $\sum_{a \in \pos{C}}\dir{C}{a}$, the total set of directions in $C$.
   \item The source map $s$ sends each $f \in \dir{C}{a}$ to $a$. (Hence the
     polynomial $C$ is described by the bundle
     $\Arr(\cat{C}) \bundle{s} \Ob(\cat{C})$.)
@@ -240,7 +206,8 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
     side is defined. The left side only makes sense if
     $t(f,g) = s(e(t(g)))$, which is $t(g)$.}
 
-  We verify the data from above satisfy the laws of a category.
+  With this in mind, we verify the data from above satisfy the laws of
+  a category.
   \begin{itemize}
   \item The law $s(e(a)) = a$ is true by construction; $e(a)$ is a
     direction from the position $a$.
@@ -329,7 +296,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   Therefore the expression $\posmapof{\rho}{a}_z$ for $z \in \dir{M}{a}$ has a
   well-defined meaning.
 
-  Let $\cat{D}$ be the category corresponding to $D$. We gather the
+  Let $\cat{D}$ be the category underlying $D$. We gather the
   data for a family of copresheaves $\{Z_a\}_{a \in A}$ on $\cat{D}$.
   \begin{itemize}
   \item The family's indexing set $A$ is $\pos{M}$, the set
@@ -351,12 +318,13 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
     $t(z,f) = s(e(t(f)))$, which is $t(f)$.} (The argument works the same
   for copresheaves as it does for categories.)
 
-  We verify each $Z_a$ satisfies the laws of a copresheaf on $\cat{D}$.
+  With this in mind, we verify each $Z_a$ satisfies the laws of a
+  copresheaf on $\cat{D}$.
   \begin{itemize}
   \item The identity law $m(z, e(t(z))) = z$ is directly expressed by
     the right comodule identity law, which identifies
     ${\anydirmapof{\rho}{z \subd \anydirmapof{\varepsilon}{\idsubd}}}$
-    whenever this makes sense.
+    with $z$ whenever this makes sense.
   \item The associativity law $m(m(z, f), g) = m(z, m(f, g))$ is
     directly expressed by the right comodule associativity law, which
     identifies
@@ -382,11 +350,11 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
 
   The above processes of translation between the prerequisite data
   (not laws) for a family of presheaves on $\cat{D}$, and the
-  prerequisite data (not laws) for a right $D$-comodule subject to just
-  $\posmapof{\rho}{a}_\base = a$, are inverse by
-  construction. Moreover, we saw earlier that the identity and
-  associativity right comodule laws, in this context, directly translate
-  to the identity and associativity copresheaf laws.
+  prerequisite data (not laws) for a right $D$-comodule subject to
+  just $\posmapof{\rho}{a}_\base = a$, are inverse by
+  construction. Moreover, the identity and associativity right
+  comodule laws, in this context, directly translate to the identity
+  and associativity copresheaf laws.
 \end{proof}
 
 \begin{prop}
@@ -421,7 +389,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
     \input{fig/lmodassocr.tikz}
   \end{center}
 
-  Let $\cat{C}$ be the category corresponding to $C$. We gather the
+  Let $\cat{C}$ be the category underlying $C$. We gather the
   data for a copresheaf $X$ on $\cat{C}$.
   \begin{itemize}
   \item The total set of elements $\sum_{c \in \Ob(\cat{C})}X(c)$ in
@@ -450,11 +418,12 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
     $\dirmapof{\lambda}{x}{f \subd z}$.
 
     (To be clear, the domain of this map is the set of tuples
-    $(x, f, z)$ such that $t(x) = s(f)$ and $m(x, f) = s(z)$. This is
-    indeed the set of pairs $(\atel{f}{x}, z)$ that should belong in the
-    domain of multiplication for our presheaf on $\int_{\cat{C}}X$,
-    since an arrow $\atel{f}{x}$ in $\int_{\cat{C}}X$ is a pair $(x, f)$ such
-    that $t(x) = s(f)$, and the target of this arrow is $m(x, f)$.)
+    $(x, f, z)$ such that $t(x) = s(f)$ and $m(x, f) = s(z)$. This
+    indeed coincides with the set of pairs $(\atel{f}{x}, z)$ that
+    should belong in the domain of multiplication for our presheaf on
+    $\int_{\cat{C}}X$, since an arrow $\atel{f}{x}$ in
+    $\int_{\cat{C}}X$ is a pair $(x, f)$ such that $t(x) = s(f)$, and
+    the target of this arrow is $m(x, f)$.)
   \end{itemize}
 
   We will also use the following notation for identities and
@@ -518,10 +487,10 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   The above processes of translation between the prerequisite data
   (not laws) for a presheaf on the category of elements of a
   copresheaf on $\cat{C}$, and the prerequisite data (not laws) for a
-  left $C$-comodule, are inverse by construction. Moreover, we saw
-  earlier that the identity and associativity left comodule
-  laws, in this context, directly translate to the identity and
-  associativity copresheaf and presheaf laws.
+  left $C$-comodule, are inverse by construction. Moreover, we the
+  identity and associativity left comodule laws, in this context,
+  directly translate to the identity and associativity copresheaf and
+  presheaf laws.
 \end{proof}
 
 \begin{prop}
@@ -543,8 +512,8 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
     $\cat{A} \prof \cat{B}$ for a profunctor
     $\cat{A}^\op \times \cat{B} \to \Set$ is due to Michael Shulman.}
   $(\int_{\cat{C}} X) \prof \cat{D}$, where $\cat{C}$ is the category
-  corresponding to $C$, $X$ is a copresheaf on $\cat{C}$, and
-  $\cat{D}$ is the category corresponding to $D$.
+  underlying $C$, $X$ is a copresheaf on $\cat{C}$, and
+  $\cat{D}$ is the category underlying $D$.
 
   Such a profunctor is the same as a prafunctor
   $\Set^{\cat{D}} \to \Set^{\cat{C}}$. Indeed,
@@ -629,7 +598,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   \[\sum_{x \in X\!(c)}\Hom(Z_x, -) \quad \to \quad \sum_{x' \in X'\!(c)}\Hom(Z_{x'}',
     -)\] is the same as a function $\posmap{\alpha}$ from $X(c)$ to
   $X'(c)$ and a map of $\cat{D}$-presheaves
-  ${Z_{\posmapof{\alpha}{x}} \to Z_x}$ for each $x \in X(c)$ (by the
+  $\dirmap{\alpha}{x}: {Z_{\posmapof{\alpha}{x}} \to Z_x}$ for each $x \in X(c)$ (by the
   Yoneda lemma). On that account, we can see how a $\cat{C}$-shaped
   diagram of natural transformations is a $\cat{D}$-copresheaf-valued
   presheaf on the category of elements of a $\cat{C}$-copresheaf: the
@@ -638,7 +607,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   application of an arrow is a $\cat{D}$-copresheaf map in the
   opposite direction.
 
-  Putting it all together, a natural transformation between
+  Putting it all together, a natural transformation between the
   prafunctors corresponding to profunctors
   $Z : (\int_{\cat{C}} X)^\op \to \Set^{\cat{D}}$ and
   $Z' : (\int_{\cat{C}} X')^\op \to \Set^{\cat{D}}$ (where $X$ and
@@ -649,7 +618,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   between prafunctors corresponds to the evident composition of such
   $\alpha$ maps.)
 
-  Let $C$ and $D$ be polynomial comonoids (with corresponding
+  Let $C$ and $D$ be polynomial comonoids (with underlying
   categories $\cat{C}$ and $\cat{D}$). Let $M$ and $N$ be bicomodules
   from $C$ to $D$, and let $\alpha$ be a bicomodule map from $M$ to
   $N$.
@@ -724,14 +693,13 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   $(M \sub_D N)^* \cong N^* \fatsemi M^*$ (where $M: C \bim D$ and
   $N: D \bim E$ are bicomodules).
   
-  We show that the profunctor-induced prafunctor corresponding to the
-  bicomodule $M$ is the same functor $M^*$ induced by horizontal
-  precomposition of $M$.
+  We show that the prafunctor underlying the bicomodule $M$ is the
+  same functor $M^*$ induced by horizontal precomposition of $M$.
 
   Recall\footnote{We have not shown this in this paper.} that the
   composite $M \sub_D N$ of bicomodules ${M: C \bim D}$ and
-  ${N: D \bim E}$ is the equalizer of $\id_M \subd \lambda_N$ and
-  $\rho_M \subd \id_N$. Its bicomodule structure is given by the
+  ${N: D \bim E}$ is the equalizer of $\id_M \sub \lambda_N$ and
+  $\rho_M \sub \id_N$. Its bicomodule structure is given by the
   unique transformations
   \[\lambda_{M \sub_D N}: M \sub_D N \to C \sub M \sub_D N \quad
     \text{ and } \quad \rho_{M \sub_D N} : M \sub_D N \to M \sub_D N
@@ -771,14 +739,15 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   $\lambda_N$. As a right $D$-comodule, $M$ describes a family of
   $\cat{D}$-copresheaves. Hence $(- \sub_D -)$ may be viewed as an
   operation that takes as input a family of $\cat{D}$-copresheaves
-  $\{Z_x\}_{x \in X}$ plus another $\cat{D}$-copresheaf $U$ and
+  $\{Z_x\}_{x \in X}$, plus another $\cat{D}$-copresheaf $U$, and
   returns a constant polynomial $P$ (i.e., a set). The positions in
-  $P$ are the $p \in \pos{(M \sub N)}$ such that
+  this $P$ are the $p \in \pos{(M \sub N)}$ such that
   $m(p_z, f) = p_{m(z, f)}$ for all $z \in M[p_\base]$. Such a $p$ is
   the same as a natural transformation from any one of the $Z_x$ to
   $U$.
 
-  This set of natural transformations $P$ is endowed with a
+  This set $P$, whose elements are identified with natural
+  transformations $Z_x \to U$, is endowed with a
   $\cat{C}$-copresheaf (left $C$-comodule) structure
   $\lambda_{M \sub_D N}$, induced by $\lambda_M$. Indeed, $\lambda_M$
   supplies a covariant action by $\cat{C}$ on the indexing set $X$ of
@@ -792,7 +761,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   \[P(c) = (M^*(U))(c) = \sum_{x \in X\!(c)}\Hom_{\Set^\cat{D}}(Z_x, U).\]
 
   This characterizes the behavior of $M^*$ on objects. We see the
-  expected form of the prafunctor corresponding to $M$. In particular,
+  expected form of the prafunctor underlying $M$. In particular,
   when $U$ is the terminal $\cat{D}$-copresheaf, $P$ is $X$ (the
   $\cat{C}$-copresheaf induced by $\lambda_M$).
   
@@ -829,7 +798,14 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   $M^*$ on maps (which could already have been anticipated based on
   the formula for $M^*(U)$ given above).
 
-  The $\cat{C}$-copresheaf map $M^*(!_U)$ (where $!_U: U \to 1$)
+  The result, $M^*(U) = \sum_{x \in X\!(-)} \Hom(Z(x),U)$, is
+  precisely the prafunctor between presheaf categories (or
+  equivalently, $\cat{C}$-shaped diagram valued in coproducts of
+  representables) corresponding to the profunctor
+  $Z: (\Set^{\int_{\cat{C}}X})^\op \to \Set^{\cat{D}}$.
+
+  \iffalse
+  The $\cat{C}$-copresheaf map $M^*(!_U)$, where $!_U: U \to 1$,
   assigns each $p: Z_x \to U$ in $M^*(U)$ the index $x \in X$ of its
   domain $Z_x$, equipping $M^*U$ with the structure of a
   $\int_{\cat{C}}X$-copresheaf. This is the canonical lift of the
@@ -837,14 +813,16 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   $\slicelift{M^*}: \Set^{\cat{D}} \to \Set^{\cat{C}}/M^*(1) =
   \Set^{\cat{C}}/X \cong \Set^{\int_{\cat{C}}X}$.
 
-  It is left to observe that $\slicelift{M^*}$ is right adjoint to
-  $\cocoextend{Z}: \Set^{\int_{\cat{C}}X} \to \Set^{\cat{D}}$, the
-  cocontinuous extension of the functor
+  Now we may ask, is $\slicelift{M^*}$ the functor we expected? Carrying
+  through the correspondence between profunctors and prafunctors, we
+  expect it to be right adjoint to the cocontinuous extension of
   $Z: (\int_{\cat{C}}X)^\op \to \Set^{\cat{D}}$ to the free
-  cocompletion of its domain. Fortunately, $U \mapsto \Hom(Z(-),U)$ is
-  precisely the formula for the right adjoint of the cocontinuous
-  extension of a (co)presheaf-valued functor $Z$ to the cocompletion of
-  its domain.
+  cocompletion of its domain,
+  $\cocoextend{Z}: \Set^{\int_{\cat{C}}X} \to
+  \Set^{\cat{D}}$. Fortunately, $U \mapsto \Hom(Z(-),U)$ is precisely
+  the formula for the right adjoint of the cocontinuous extension of a
+  (co)presheaf-valued functor $Z$ to the cocompletion of its domain.
+  \fi
 \end{proof}
 
 \begin{prop}
@@ -852,7 +830,7 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
   of natural transformations between prafunctors.
 \end{prop}
 \begin{proof}
-  Each bicomodule map $\alpha: M \to M': C \to D$ induces a natural
+  Each bicomodule map $\alpha: M \to M': C \bim D$ induces a natural
   transformation $\alpha^*:M^* \to {M'}^*$ by horizontal ($\sub_D$)
   precomposition. Accordingly, we have that the natural transformation
   $(\alpha \sub_D \beta)^*: (M \sub_D N)^* \to (M' \sub_D N')^*$ is
@@ -876,19 +854,19 @@ $\anydirmapof{(\alpha \sub \beta)}{f \subd g} = \anydirmapof{\alpha}{f}
 
   Recall $M \sub_D N$ is the $\cat{C}$-copresheaf
   $\sum_{x \in X\!(-)} \Hom(Z(x),U)$, where $Z$ is the functor
-  $\int_{\cat{C}}X \to \Set^{\cat{D}}$ corresponding to $M$ and $U$ is
-  the $\cat{D}$-copresheaf corresponding to $N$. We see that
+  $\int_{\cat{C}}X \to \Set^{\cat{D}}$ underlying $M$ and $U$ is the
+  $\cat{D}$-copresheaf underlying $N$. We see that
   $\posmap{(\alpha \sub_D \id_N)}$ sends each ${p \in \Hom(Z(x),U)}$
   to
   $\dirmap{\alpha}{x} \fatsemi {p \in
-    \Hom(Z(\posmapof{\alpha}{x}),U)}$. This is the relevant Yoneda
-  embedding of $\dirmap{\alpha}{x}$, as a map of
-  $\cat{D}$-copresheaves.
+    \Hom(Z(\posmapof{\alpha}{x}),U)}$. The relevant Yoneda embedding
+  identifies this map between representable functors with the map of
+  $\cat{D}$-copresheaves $\dirmap{\alpha}{x}$.
 
   Hence $\alpha^*$ is the same transformation of prafunctors derived
-  from the data in $\alpha$, where indexes of $\cat{D}$-copresheaves
+  from the data in $\alpha$ (where indexes of $\cat{D}$-copresheaves
   are mapped according to $\posmap{\alpha}$ and elements are mapped
-  backwards according to $\anydirmap{\alpha}$.
+  backwards according to $\anydirmap{\alpha}$).
 \end{proof}
 
 \end{document}
