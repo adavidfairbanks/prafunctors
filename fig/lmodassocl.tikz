@@ -39,11 +39,6 @@
 \draw [rcol,edge] (m4_) -- (m4);
 
 
-\draw [rcol,edge] (s) -- (m1);
-\draw [rcol,edge] (s) -- (m2);
-\draw [rcol,edge] (s) -- (m3);
-\draw [rcol,edge] (s) -- (m4);
-
 \draw [ycol,edge] (m2) -- (t1);
 \draw [ycol,edge] (m2) -- (t2);
 \draw [ycol,edge] (m2) -- (t3);
